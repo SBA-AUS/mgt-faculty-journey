@@ -26,7 +26,9 @@
       b.textContent = "Previewing the draft saved in this browser. It is not published.";
     }
     document.getElementById("ay").textContent = d.meta.academicYear;
-    document.getElementById("updated").textContent = d.meta.updated || "";
+    document.getElementById("ay-util").textContent = d.meta.academicYear;
+    var u = d.meta.updated ? Core.parse(d.meta.updated) : null;
+    document.getElementById("updated").textContent = u ? ("0" + u.getDate()).slice(-2) + "-" + Core.MONTHS[u.getMonth()] + "-" + u.getFullYear() : "";
 
     renderLinks();
     renderTabs();
