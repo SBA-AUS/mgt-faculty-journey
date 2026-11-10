@@ -1,0 +1,550 @@
+{
+  "meta": {
+    "academicYear": "2026-27",
+    "updated": "2026-11-10",
+    "note": "Dates for the current term come from the academic calendar and department emails. Items marked approximate follow last year's pattern."
+  },
+  "categories": {
+    "research": { "label": "Research & Grants", "color": "#a03021" },
+    "teaching": { "label": "Teaching & Courses", "color": "#3d3d3d" },
+    "students": { "label": "Students & Advising", "color": "#d0695a" },
+    "dept": { "label": "Department & Reporting", "color": "#a08a72" }
+  },
+  "links": [
+    { "id": "dept", "label": "MSE Department page", "url": "https://www.aus.edu/sba/department-of-management-strategy-entrepreneurship", "desc": "People, programs and news" },
+    { "id": "majormap", "label": "Management Major Map", "url": "https://sba-aus.github.io/mgt-major-map/", "desc": "Use it when advising students" },
+    { "id": "sbaresearch", "label": "Research at SBA", "url": "https://www.aus.edu/sba/research-at-sba", "desc": "School grants, awards and support" },
+    { "id": "research", "label": "AUS Research", "url": "https://www.aus.edu/research", "desc": "Office of Research, IRB and CITI information" },
+    { "id": "funding", "label": "Research funding at SBA", "url": "https://www.aus.edu/sba/research-at-sba?t=research-funding", "desc": "Current internal funding schemes" },
+    { "id": "facresearch", "label": "Faculty research", "url": "https://www.aus.edu/research/faculty-research", "desc": "Grants, policies and forms" },
+    { "id": "ilearn", "label": "iLearn Research Services", "url": "https://ilearn.aus.edu/ultra/organizations/_49764_1/cl/outline", "desc": "Grant documents and templates" },
+    { "id": "dm", "label": "Digital Measures", "url": "https://www.digitalmeasures.com/login/aus/faculty/", "desc": "Annual report and activity record" },
+    { "id": "watermark", "label": "Watermark (Planning & Self-Study)", "url": "https://go.aus.edu/pss", "desc": "Course files and assurance of learning" },
+    { "id": "banner", "label": "Banner", "url": "https://banner.aus.edu", "desc": "Midterm and final grades (Faculty Services)" },
+    { "id": "calendar", "label": "Academic calendar", "url": "https://www.aus.edu/academics/services-and-resources/academic-calendar", "desc": "Official dates for every term" }
+  ],
+  "terms": {
+    "fall": {
+      "label": "Fall 2026",
+      "start": "2026-08-24",
+      "weeks": 14,
+      "finalsStart": "2026-11-28",
+      "finalsEnd": "2026-12-10",
+      "breaks": []
+    },
+    "spring": {
+      "label": "Spring 2027",
+      "start": "2027-01-11",
+      "weeks": 16,
+      "finalsStart": "2027-05-02",
+      "finalsEnd": "2027-05-12",
+      "breaks": [
+        { "week": 9, "label": "Eid Al Fitr break (Mar 8-11)" },
+        { "week": 13, "label": "Spring break (Apr 5-11)" }
+      ]
+    },
+    "summer": {
+      "label": "Summer 2027",
+      "start": "2027-05-31",
+      "weeks": 6,
+      "finalsStart": "2027-07-10",
+      "finalsEnd": "2027-07-13",
+      "breaks": []
+    }
+  },
+  "coordinators": [],
+  "events": [
+    {
+      "id": "f-dm", "term": "fall", "week": 0, "category": "dept", "audience": "all", "status": "confirmed",
+      "title": "Start-of-year department meeting",
+      "dateText": "Thu Aug 20, 2026, 11:30 am",
+      "history": ["2025: Thu Aug 21, 3:00 pm"],
+      "description": "The department meets the week before classes start. It is the best place to meet colleagues and hear the year's priorities.",
+      "tip": "Bring questions about coordinated courses and your syllabus.",
+      "links": [{ "label": "Department page", "url": "https://www.aus.edu/sba/department-of-management-strategy-entrepreneurship" }]
+    },
+    {
+      "id": "f-syl", "term": "fall", "week": 0, "category": "teaching", "audience": "all", "status": "confirmed",
+      "title": "Syllabus due",
+      "dateText": "Template Thu Aug 13; due Tue Aug 18, 2026",
+      "history": ["Spring 2026: template Jan 6, approved Jan 7", "Summer 2026: template Jun 2, approved Jun 3"],
+      "description": "Send your syllabus to the Head of Department (cc the department assistant). For coordinated courses, your course coordinator approves it first.",
+      "tip": "Start from the department template and check the coordinator's shared materials.",
+      "links": [],
+      "action": "coordinators"
+    },
+    {
+      "id": "f-frgopen", "term": "fall", "week": 0, "category": "research", "audience": "all", "status": "confirmed",
+      "title": "Faculty Research Grant (FRG27) call opens",
+      "dateText": "RFP issued Aug 4, 2026",
+      "history": ["FRG26: RFP Jul 10, 2025; Q&A session Tue Sep 9, 2025, 4 pm"],
+      "description": "Internal grants of up to AED 500,000 over two years. Read the call, then plan your proposal and budget with your Head of Department.",
+      "tip": "Attend the Q&A session if one is announced.",
+      "links": [{ "label": "Faculty research", "url": "https://www.aus.edu/research/faculty-research" }, { "label": "Email FRG office", "url": "mailto:frg@aus.edu" }]
+    },
+    {
+      "id": "f-ferc", "term": "fall", "week": 0, "category": "dept", "audience": "all", "status": "approx",
+      "title": "Promotion and rolling contract review notice (FERC)",
+      "dateText": "Approximate",
+      "history": ["2024: announced Aug 12"],
+      "description": "Faculty due for promotion or rolling contract review are notified early in the Fall. Check the instructions and prepare your file.",
+      "tip": "Ask your Head of Department what your file should include.",
+      "links": [{ "label": "Digital Measures", "url": "https://www.digitalmeasures.com/login/aus/faculty/" }]
+    },
+    {
+      "id": "f-annrep", "term": "fall", "week": 2, "category": "dept", "audience": "all", "status": "confirmed",
+      "title": "Department annual report input",
+      "dateText": "Draft Tue Sep 1; additions due Thu Sep 3, 2026",
+      "history": [],
+      "description": "The department compiles its annual report in the first weeks of the Fall. Send your additions when asked.",
+      "tip": "Keep your Digital Measures record current so this is quick.",
+      "links": [{ "label": "Digital Measures", "url": "https://www.digitalmeasures.com/login/aus/faculty/" }]
+    },
+    {
+      "id": "f-cfsum", "term": "fall", "week": 3, "category": "teaching", "audience": "all", "status": "confirmed",
+      "title": "Summer course files and CLO reporting due",
+      "dateText": "Mon Sep 7, 2026",
+      "history": ["2025: Thu Sep 4"],
+      "description": "Upload course files and complete assurance of learning (CLO/CAR) for any course you taught in the Summer.",
+      "tip": "Course file guidelines arrive in the end-of-semester email from the Associate Dean.",
+      "links": [{ "label": "Watermark", "url": "https://go.aus.edu/pss" }]
+    },
+    {
+      "id": "f-sabb", "term": "fall", "week": 4, "category": "research", "audience": "all", "status": "approx",
+      "title": "Sabbatical applications",
+      "dateText": "Head of Department deadline near end of week 4",
+      "history": ["2025: HoD Sep 18; Dean Oct 2; Provost Oct 16; committee Nov 20; Chancellor by Jan 30"],
+      "description": "Applications move from Head of Department to Dean, Provost, a committee and the Chancellor. Plan early because each step has its own deadline.",
+      "tip": "Talk to your Head of Department in the first weeks of term.",
+      "links": []
+    },
+    {
+      "id": "f-cwg", "term": "fall", "week": 4, "category": "research", "audience": "all", "status": "confirmed",
+      "title": "Conference and Workshop Grant (CWG27), round 1",
+      "dateText": "Pre-submission Tue Sep 15, 2026 (five rounds this year)",
+      "history": ["2025-26: pre-submission on the 1st of Sep, Nov, Jan, Mar, May; final submission via the Dean's office on the 13th; awards about the 30th; up to AED 75,000"],
+      "description": "Funding to present at conferences or run workshops. Rounds repeat through the year, so you can catch a later one.",
+      "tip": "Submit your pre-submission before the round closes, then finalize through the Dean's office.",
+      "links": [{ "label": "Research funding", "url": "https://www.aus.edu/sba/research-at-sba?t=research-funding" }]
+    },
+    {
+      "id": "f-frgpi", "term": "fall", "week": 6, "category": "research", "audience": "all", "status": "confirmed",
+      "title": "FRG27 proposal: PI deadline to the Dean",
+      "dateText": "Thu Oct 1, 2026, 4 pm. School to Research Office: Oct 15, 4 pm",
+      "history": ["Awards announced about March; projects run Jun 1, 2027 to May 31, 2029"],
+      "description": "Principal investigators send the proposal to the Dean. The School then submits to the Office of the Vice Chancellor for Research.",
+      "tip": "Allow time for IRB needs and a budget check before October 1.",
+      "links": [{ "label": "Faculty research", "url": "https://www.aus.edu/research/faculty-research" }]
+    },
+    {
+      "id": "f-ug", "term": "fall", "week": 7, "category": "research", "audience": "all", "status": "confirmed",
+      "title": "SBA Undergraduate Research Grant, round 1",
+      "dateText": "Thu Oct 8, 2026 (extended)",
+      "history": ["2025-26: Sep 29, 2025 and Feb 23, 2026"],
+      "description": "Supports faculty who involve undergraduate students in research. A second round follows in the Spring.",
+      "tip": "A good first grant to try with a student collaborator.",
+      "links": [{ "label": "Research at SBA", "url": "https://www.aus.edu/sba/research-at-sba" }]
+    },
+    {
+      "id": "f-mid", "term": "fall", "week": 8, "category": "teaching", "audience": "all", "status": "approx",
+      "title": "Midterm grades for at-risk students",
+      "dateText": "Approximate",
+      "history": ["Spring 2025: reminder sent Mar 3 (week 7 or 8)"],
+      "description": "Enter midterm grades in Banner for students who are struggling, so advisors can reach them early.",
+      "tip": "Faculty Services > Midterm Grades in Banner.",
+      "links": [{ "label": "Banner", "url": "https://banner.aus.edu" }]
+    },
+    {
+      "id": "f-commnames", "term": "fall", "week": 10, "category": "students", "audience": "all", "status": "approx",
+      "title": "Commencement faculty attendance",
+      "dateText": "Names requested about Oct 28, 2026",
+      "history": [],
+      "description": "Faculty are asked to confirm whether they will attend commencement, which is on Dec 20 (tentative).",
+      "tip": "Watch for the email from the Dean's office.",
+      "links": []
+    },
+    {
+      "id": "f-adv", "term": "fall", "week": 11, "weekEnd": 13, "category": "students", "audience": "all", "status": "confirmed",
+      "title": "Advising for Spring",
+      "dateText": "Advising from Nov 2; priority registration Nov 9; withdrawal deadline Nov 16, 2026",
+      "history": ["2025: advising began Nov 5", "2024: advising began Nov 6"],
+      "description": "Meet your advisees and clear their advising holds. The Management major map shows the course sequence and prerequisites.",
+      "tip": "Open the major map during the meeting and plan the next two semesters.",
+      "links": [{ "label": "Management Major Map", "url": "https://sba-aus.github.io/mgt-major-map/" }, { "label": "Academic calendar", "url": "https://www.aus.edu/academics/services-and-resources/academic-calendar" }]
+    },
+    {
+      "id": "f-sharakah", "term": "fall", "week": 11, "category": "students", "audience": "all", "status": "confirmed",
+      "title": "Sharakah Public Speaking Competition",
+      "dateText": "Nov 5, 2026",
+      "history": [],
+      "description": "A student event. Faculty can attend, judge or encourage students to take part.",
+      "tip": "",
+      "links": []
+    },
+    {
+      "id": "f-sust", "term": "fall", "week": 12, "category": "research", "audience": "all", "status": "confirmed",
+      "title": "Sustainability Research Day",
+      "dateText": "Thu Nov 12, 2026",
+      "history": [],
+      "description": "University event where faculty and students share research on sustainability.",
+      "tip": "A good chance to meet researchers from other schools.",
+      "links": [{ "label": "AUS Research", "url": "https://www.aus.edu/research" }]
+    },
+    {
+      "id": "f-eval", "term": "fall", "week": 12, "category": "teaching", "audience": "all", "status": "approx",
+      "title": "Student course evaluations open",
+      "dateText": "Approximate",
+      "history": [],
+      "description": "Students evaluate courses near the end of term. Encourage them to respond, ideally with class time to do it.",
+      "tip": "Confirm the exact window with the department.",
+      "links": []
+    },
+    {
+      "id": "f-enddm", "term": "fall", "week": 13, "category": "dept", "audience": "all", "status": "approx",
+      "title": "End-of-term department meeting",
+      "dateText": "Approximate; usually a Thursday afternoon",
+      "history": ["2025: Thu Nov 20, 4:45 pm", "2024: Wed Nov 20, 4:30 pm"],
+      "description": "Review the term, grading and next semester's plans.",
+      "tip": "",
+      "links": []
+    },
+    {
+      "id": "f-endemail", "term": "fall", "week": 14, "category": "teaching", "audience": "all", "status": "approx",
+      "title": "End-of-semester email from the Associate Dean",
+      "dateText": "About two days before finals",
+      "history": ["Spring 2026: May 7", "Summer 2025: Jul 14", "Summer 2026: Jul 22"],
+      "description": "Attached: final exam policy, CAR form, course file guidelines, upload guidelines and declaration form. Every course needs a scheduled assessment in exam week, and grades are posted on iLearn.",
+      "tip": "Read the attachments before you finalize your exam.",
+      "links": []
+    },
+    {
+      "id": "f-grades", "term": "fall", "week": "finals", "category": "teaching", "audience": "all", "status": "confirmed",
+      "title": "Enter final grades in Banner",
+      "dateText": "Within 48 hours of each final exam",
+      "history": ["Spring 2026: opened May 11", "Summer 2026: opened Jul 16"],
+      "description": "Enter grades through Faculty Services > Final Grades. Grades roll to student history at 10 am, Monday to Thursday.",
+      "tip": "Post grades on iLearn as well.",
+      "links": [{ "label": "Banner", "url": "https://banner.aus.edu" }]
+    },
+    {
+      "id": "f-commence", "term": "fall", "week": "after", "category": "students", "audience": "all", "status": "approx",
+      "title": "Fall commencement",
+      "dateText": "Dec 20, 2026 (tentative)",
+      "history": [],
+      "description": "Graduation ceremony for Fall graduates.",
+      "tip": "",
+      "links": [{ "label": "Academic calendar", "url": "https://www.aus.edu/academics/services-and-resources/academic-calendar" }]
+    },
+    {
+      "id": "f-cffall", "term": "fall", "week": "after", "category": "teaching", "audience": "all", "status": "approx",
+      "title": "Fall course files and CLO reporting",
+      "dateText": "Approximate; announced after the term",
+      "history": ["Spring 2026: files due Jun 1; CLO closed Jun 16", "Fall 2025 CLO window: Mar 9-15, 2026, extended to Apr 5-12"],
+      "description": "Upload course files and complete CLO/CAR for the courses you taught. The date is announced by email each term.",
+      "tip": "Start your CAR as grades are finalized so it is not a rush later.",
+      "links": [{ "label": "Watermark", "url": "https://go.aus.edu/pss" }]
+    },
+
+    {
+      "id": "s-dm", "term": "spring", "week": 0, "category": "dept", "audience": "all", "status": "approx",
+      "title": "Start-of-semester department meeting",
+      "dateText": "Approximate; week before classes",
+      "history": ["2026: Thu Jan 8, 2:00 pm"],
+      "description": "The department meets the week before classes start.",
+      "tip": "",
+      "links": []
+    },
+    {
+      "id": "s-syl", "term": "spring", "week": 0, "category": "teaching", "audience": "all", "status": "approx",
+      "title": "Syllabus due",
+      "dateText": "Approximate; about the first days of term",
+      "history": ["2026: template Jan 6, approved Jan 7"],
+      "description": "Send your syllabus to the Head of Department (cc the department assistant). For coordinated courses, your course coordinator approves it first.",
+      "tip": "",
+      "links": [],
+      "action": "coordinators"
+    },
+    {
+      "id": "s-awards", "term": "spring", "week": 1, "category": "research", "audience": "all", "status": "approx",
+      "title": "Outstanding Research and Creative Works Awards: nominations",
+      "dateText": "Approximate",
+      "history": ["2026: reminders Dec 29 and Jan 12", "2025: winners announced May 9-13"],
+      "description": "Nominate your own work or a colleague's for the annual research awards.",
+      "tip": "",
+      "links": [{ "label": "Research at SBA", "url": "https://www.aus.edu/sba/research-at-sba" }]
+    },
+    {
+      "id": "s-sabb", "term": "spring", "week": 3, "category": "research", "audience": "all", "status": "approx",
+      "title": "Sabbatical decisions",
+      "dateText": "Approximate; Chancellor decision by about Jan 30",
+      "history": [],
+      "description": "Decisions on Fall sabbatical applications arrive near the end of January.",
+      "tip": "",
+      "links": []
+    },
+    {
+      "id": "s-ug", "term": "spring", "week": 4, "category": "research", "audience": "all", "status": "approx",
+      "title": "SBA Undergraduate Research Grant, round 2",
+      "dateText": "Approximate; confirm with the department",
+      "history": ["2026: Feb 23"],
+      "description": "A second round for faculty who involve undergraduate students in research.",
+      "tip": "",
+      "links": [{ "label": "Research at SBA", "url": "https://www.aus.edu/sba/research-at-sba" }]
+    },
+    {
+      "id": "s-frgaward", "term": "spring", "week": 8, "category": "research", "audience": "all", "status": "approx",
+      "title": "FRG27 awards announced",
+      "dateText": "March 2027",
+      "history": ["FRG26 awards: Mar 1, 2026"],
+      "description": "Decisions on the Faculty Research Grant round. Funded projects start Jun 1, 2027.",
+      "tip": "",
+      "links": []
+    },
+    {
+      "id": "s-mid", "term": "spring", "week": 8, "category": "teaching", "audience": "all", "status": "approx",
+      "title": "Midterm grades for at-risk students",
+      "dateText": "Approximate; before the Eid break",
+      "history": ["2025: reminder Mar 3"],
+      "description": "Enter midterm grades in Banner for students who are struggling.",
+      "tip": "Faculty Services > Midterm Grades.",
+      "links": [{ "label": "Banner", "url": "https://banner.aus.edu" }]
+    },
+    {
+      "id": "s-adv", "term": "spring", "week": 12, "weekEnd": 15, "category": "students", "audience": "all", "status": "confirmed",
+      "title": "Advising for Summer and Fall",
+      "dateText": "Advising from Mar 29; Summer registration Apr 12-18; Fall registration Apr 19-25; withdrawal deadline Apr 22, 2027",
+      "history": ["2025: department advising week Apr 7-10; advising form signed and sent to the department assistant to remove the Banner hold, before 3 pm Apr 10"],
+      "description": "Meet advisees and clear their holds. The Management major map shows the course sequence.",
+      "tip": "Open the major map during the meeting.",
+      "links": [{ "label": "Management Major Map", "url": "https://sba-aus.github.io/mgt-major-map/" }, { "label": "Academic calendar", "url": "https://www.aus.edu/academics/services-and-resources/academic-calendar" }]
+    },
+    {
+      "id": "s-eval", "term": "spring", "week": 14, "category": "teaching", "audience": "all", "status": "approx",
+      "title": "Student course evaluations open",
+      "dateText": "Approximate",
+      "history": [],
+      "description": "Encourage your students to complete the evaluations.",
+      "tip": "",
+      "links": []
+    },
+    {
+      "id": "s-pdg", "term": "spring", "week": 15, "category": "research", "audience": "all", "status": "approx",
+      "title": "SBA Professional Development Grant",
+      "dateText": "Approximate",
+      "history": ["2026: applications Apr 20; awards Apr 30; spend by Aug 31"],
+      "description": "Small grant for professional development. Check the spending deadline before you apply.",
+      "tip": "",
+      "links": [{ "label": "Research at SBA", "url": "https://www.aus.edu/sba/research-at-sba" }]
+    },
+    {
+      "id": "s-clo", "term": "spring", "week": 15, "category": "teaching", "audience": "all", "status": "approx",
+      "title": "Spring CLO reporting opens",
+      "dateText": "Approximate",
+      "history": ["2026: opened Apr 15; extended; closed Jun 16"],
+      "description": "Assurance of learning reporting in Watermark opens before the term ends.",
+      "tip": "",
+      "links": [{ "label": "Watermark", "url": "https://go.aus.edu/pss" }]
+    },
+    {
+      "id": "s-annual", "term": "spring", "week": 16, "category": "dept", "audience": "all", "status": "approx",
+      "title": "Annual evaluation opens in Digital Measures",
+      "dateText": "About May 1",
+      "history": ["2026: launched May 1; faculty due Jun 1", "2025: launched Apr 30; faculty due Jun 1"],
+      "description": "The SBA Annual Review covers teaching and service from Summer through Spring, and research over a two-year window.",
+      "tip": "Update Digital Measures during the year so you only need to review it.",
+      "links": [{ "label": "Digital Measures", "url": "https://www.digitalmeasures.com/login/aus/faculty/" }]
+    },
+    {
+      "id": "s-enddm", "term": "spring", "week": 16, "category": "dept", "audience": "all", "status": "approx",
+      "title": "End-of-year department meeting",
+      "dateText": "Approximate; some years online",
+      "history": ["2025: Apr 23", "2026: May 6 (online)"],
+      "description": "Review the year and plan ahead.",
+      "tip": "",
+      "links": []
+    },
+    {
+      "id": "s-endemail", "term": "spring", "week": 16, "category": "teaching", "audience": "all", "status": "approx",
+      "title": "End-of-semester email from the Associate Dean",
+      "dateText": "About two days before finals",
+      "history": ["2026: May 7"],
+      "description": "Attached: final exam policy, CAR form, course file guidelines and declaration form.",
+      "tip": "",
+      "links": []
+    },
+    {
+      "id": "s-grades", "term": "spring", "week": "finals", "category": "teaching", "audience": "all", "status": "confirmed",
+      "title": "Enter final grades in Banner",
+      "dateText": "Within 48 hours of each final exam",
+      "history": ["2026: opened May 11"],
+      "description": "Faculty Services > Final Grades. Post grades on iLearn as well.",
+      "tip": "",
+      "links": [{ "label": "Banner", "url": "https://banner.aus.edu" }]
+    },
+    {
+      "id": "s-commence", "term": "spring", "week": "after", "category": "students", "audience": "all", "status": "approx",
+      "title": "Spring commencement",
+      "dateText": "May 23, 2027 (tentative)",
+      "history": [],
+      "description": "Graduation ceremony for Spring graduates.",
+      "tip": "",
+      "links": []
+    },
+
+    {
+      "id": "u-syl", "term": "summer", "week": 0, "category": "teaching", "audience": "all", "status": "approx",
+      "title": "Syllabus due",
+      "dateText": "Approximate",
+      "history": ["2026: template Jun 2, approved Jun 3"],
+      "description": "Summer terms are short, so send your syllabus as soon as it is ready.",
+      "tip": "",
+      "links": [],
+      "action": "coordinators"
+    },
+    {
+      "id": "u-cfspring", "term": "summer", "week": 1, "category": "teaching", "audience": "all", "status": "confirmed",
+      "title": "Spring course files due",
+      "dateText": "Jun 1 (2026 date)",
+      "history": [],
+      "description": "Upload course files for the Spring courses you taught.",
+      "tip": "",
+      "links": [{ "label": "Watermark", "url": "https://go.aus.edu/pss" }]
+    },
+    {
+      "id": "u-annual", "term": "summer", "week": 1, "category": "dept", "audience": "all", "status": "approx",
+      "title": "Annual review: faculty submission due",
+      "dateText": "Jun 1",
+      "history": ["2026: faculty due Jun 1; Head of Department due Jun 15"],
+      "description": "Finish your section of the SBA Annual Review in Digital Measures.",
+      "tip": "",
+      "links": [{ "label": "Digital Measures", "url": "https://www.digitalmeasures.com/login/aus/faculty/" }]
+    },
+    {
+      "id": "u-frgstart", "term": "summer", "week": 1, "category": "research", "audience": "all", "status": "approx",
+      "title": "FRG projects begin",
+      "dateText": "Jun 1, 2027",
+      "history": [],
+      "description": "Funded FRG27 projects start. Check your award terms and IRB approvals.",
+      "tip": "",
+      "links": []
+    },
+    {
+      "id": "u-clo", "term": "summer", "week": 3, "category": "teaching", "audience": "all", "status": "approx",
+      "title": "Spring CLO reporting closes",
+      "dateText": "About mid June",
+      "history": ["2026: Jun 16"],
+      "description": "Finish your assurance of learning reporting in Watermark.",
+      "tip": "",
+      "links": [{ "label": "Watermark", "url": "https://go.aus.edu/pss" }]
+    },
+    {
+      "id": "u-respond", "term": "summer", "week": 3, "category": "dept", "audience": "all", "status": "approx",
+      "title": "Respond to your Head of Department's review",
+      "dateText": "About Jun 17",
+      "history": ["2026: Jun 17"],
+      "description": "Read your review in Digital Measures and add a response if you wish.",
+      "tip": "",
+      "links": [{ "label": "Digital Measures", "url": "https://www.digitalmeasures.com/login/aus/faculty/" }]
+    },
+    {
+      "id": "u-dean", "term": "summer", "week": 5, "category": "dept", "audience": "all", "status": "approx",
+      "title": "Respond to the Dean's report",
+      "dateText": "Early July",
+      "history": ["2026: Dean's report Jul 2; faculty response Jul 4; archiver closes Jul 31"],
+      "description": "The Dean's report is released. You can respond before the review is finalized.",
+      "tip": "",
+      "links": [{ "label": "Digital Measures", "url": "https://www.digitalmeasures.com/login/aus/faculty/" }]
+    },
+    {
+      "id": "u-endemail", "term": "summer", "week": 6, "category": "teaching", "audience": "all", "status": "approx",
+      "title": "End-of-semester email from the Associate Dean",
+      "dateText": "About two days before finals",
+      "history": ["2025: Jul 14", "2026: Jul 22"],
+      "description": "Final exam policy, CAR form, course file guidelines and declaration form.",
+      "tip": "",
+      "links": []
+    },
+    {
+      "id": "u-grades", "term": "summer", "week": "finals", "category": "teaching", "audience": "all", "status": "confirmed",
+      "title": "Enter final grades in Banner",
+      "dateText": "Within 48 hours of each final exam",
+      "history": ["2026: opened Jul 16"],
+      "description": "Faculty Services > Final Grades.",
+      "tip": "",
+      "links": [{ "label": "Banner", "url": "https://banner.aus.edu" }]
+    },
+    {
+      "id": "u-calls", "term": "summer", "week": "after", "category": "research", "audience": "all", "status": "approx",
+      "title": "Next year's grant calls appear (FRG, CWG, RRG)",
+      "dateText": "July to August",
+      "history": ["2025: FRG26 call Jul 10; CWG26 and RRG26 Jul 14", "2026: FRG27 call Aug 4; CWG27 Aug 19"],
+      "description": "Plan your research over the break so your proposal is ready when the Fall call opens.",
+      "tip": "",
+      "links": [{ "label": "Research funding", "url": "https://www.aus.edu/sba/research-at-sba?t=research-funding" }]
+    },
+
+    {
+      "id": "y-dm", "term": "year", "category": "dept", "audience": "all", "status": "confirmed",
+      "title": "Keep Digital Measures current",
+      "dateText": "",
+      "history": [],
+      "description": "Add publications, courses and service as they happen. It feeds your annual review and promotion files.",
+      "tip": "",
+      "links": [{ "label": "Digital Measures", "url": "https://www.digitalmeasures.com/login/aus/faculty/" }]
+    },
+    {
+      "id": "y-irb", "term": "year", "category": "research", "audience": "new", "status": "confirmed",
+      "title": "IRB approval before collecting data",
+      "dateText": "",
+      "history": [],
+      "description": "Research involving people needs IRB approval first. Check the Office of Research page for forms and training.",
+      "tip": "Apply early. Review times vary.",
+      "links": [{ "label": "AUS Research", "url": "https://www.aus.edu/research" }]
+    },
+    {
+      "id": "y-bulletin", "term": "year", "category": "research", "audience": "all", "status": "confirmed",
+      "title": "Monthly Research Bulletin",
+      "dateText": "First days of each month",
+      "history": [],
+      "description": "Sent by the Vice Chancellor for Research with funding calls and news.",
+      "tip": "",
+      "links": [{ "label": "Faculty research", "url": "https://www.aus.edu/research/faculty-research" }]
+    },
+    {
+      "id": "y-oap", "term": "year", "category": "research", "audience": "all", "status": "confirmed",
+      "title": "Open Access Publishing support (OAP)",
+      "dateText": "Rolling",
+      "history": [],
+      "description": "Support for open access fees for accepted manuscripts in top-ranked journals (top 15% in Scopus).",
+      "tip": "",
+      "links": [{ "label": "Research funding", "url": "https://www.aus.edu/sba/research-at-sba?t=research-funding" }]
+    },
+    {
+      "id": "y-external", "term": "year", "category": "research", "audience": "all", "status": "confirmed",
+      "title": "External research calls",
+      "dateText": "Announced by research@aus.edu",
+      "history": ["Examples: Faya Research Grant, AUS-SNOC Joint Research Program, Swiss-MENA Research Partnership Grants, ADIA Lab"],
+      "description": "Outside funders and partners advertise calls through the Research Office during the year.",
+      "tip": "",
+      "links": [{ "label": "AUS Research", "url": "https://www.aus.edu/research" }]
+    },
+    {
+      "id": "y-digest", "term": "year", "category": "students", "audience": "all", "status": "confirmed",
+      "title": "SBA \"What's On This Week\" digest",
+      "dateText": "Weekly",
+      "history": [],
+      "description": "A weekly email listing student and school events you can join or promote.",
+      "tip": "",
+      "links": []
+    },
+    {
+      "id": "y-map", "term": "year", "category": "students", "audience": "all", "status": "confirmed",
+      "title": "Management Major Map",
+      "dateText": "",
+      "history": [],
+      "description": "Course sequence and prerequisites for advising any time in the year.",
+      "tip": "",
+      "links": [{ "label": "Open the major map", "url": "https://sba-aus.github.io/mgt-major-map/" }]
+    }
+  ]
+}

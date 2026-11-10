@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faculty Journey | Management, Strategy and Entrepreneurship | AUS</title>
+<meta name="description" content="A week-by-week guide to the deadlines, events and routines of the academic year for faculty in the Department of Management, Strategy and Entrepreneurship.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="util">
+  <span>American University of Sharjah | School of Business Administration</span>
+  <a href="https://www.aus.edu/sba/department-of-management-strategy-entrepreneurship">Department of Management, Strategy and Entrepreneurship</a>
+</div>
+<div id="preview-banner" class="banner" hidden></div>
+
+<header class="hero">
+  <div class="brand"><img src="assets/aus-sba-logo.png" alt="American University of Sharjah, School of Business Administration"></div>
+  <div>
+    <p class="eyebrow">Management, Strategy and Entrepreneurship</p>
+    <h1>Faculty Journey</h1>
+    <p class="sub">A week-by-week guide to the academic year <strong id="ay"></strong>: deadlines, events and routines, for new and returning faculty.</p>
+  </div>
+  <div class="inst">Last updated<br><span id="updated"></span></div>
+</header>
+
+<section class="band" aria-label="Summary">
+  <div class="band-inner" id="band-inner"></div>
+</section>
+
+<main id="main">
+  <nav class="links" id="links" aria-label="Useful links"></nav>
+
+  <div class="toolbar">
+    <div class="tabs" id="tabs" role="tablist" aria-label="Semester"></div>
+    <div class="legend" id="legend" aria-label="Filter by category"></div>
+  </div>
+
+  <div id="panel" role="tabpanel">
+    <p class="term-info" id="term-info"></p>
+    <div class="map">
+      <div class="map-head"><div>Week</div><div>What is happening</div></div>
+      <div id="rows"></div>
+    </div>
+  </div>
+
+  <section class="year" aria-labelledby="year-h">
+    <h2 id="year-h">All year round</h2>
+    <p>Things that do not belong to one week. Keep them in mind throughout the year.</p>
+    <div class="year-grid" id="year-grid"></div>
+  </section>
+</main>
+
+<dialog id="ev-dialog"><div id="ev-body"></div></dialog>
+<dialog id="coord-dialog"><div id="coord-body"></div></dialog>
+
+<footer>
+  <p>Dates marked "approx." follow last year's pattern. Check the <a href="https://www.aus.edu/academics/services-and-resources/academic-calendar">academic calendar</a> and your email for the latest word.</p>
+  <p><a href="https://www.aus.edu/sba/department-of-management-strategy-entrepreneurship">Department of Management, Strategy and Entrepreneurship</a> | <a href="https://sba-aus.github.io/mgt-major-map/">Management Major Map</a></p>
+</footer>
+
+<script src="js/store.js"></script>
+<script src="js/core.js"></script>
+<script src="js/journey.js"></script>
+</body>
+</html>

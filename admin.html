@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin | Faculty Journey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="admin-bar">
+  <div>
+    <strong style="font-family:Montserrat,sans-serif">Faculty Journey: Admin</strong>
+    <span class="state" id="state" role="status">Loading...</span>
+  </div>
+  <div class="row">
+    <span id="key-wrap" hidden><label for="admin-key" style="display:inline;margin-right:4px">Admin key</label><input type="password" id="admin-key" style="width:140px"></span>
+    <a class="btn ghost small" href="index.html?preview=draft" target="_blank" rel="noopener">Preview draft</a>
+    <button class="btn ghost small" type="button" id="btn-discard">Discard changes</button>
+    <button class="btn ghost small" type="button" id="btn-reset">Reset to published</button>
+    <button class="btn small" type="button" id="btn-save">Save</button>
+  </div>
+</div>
+
+<main class="admin-main" id="app" hidden>
+  <section class="panel">
+    <h2>General</h2>
+    <p class="help">Shown in the header of the journey page.</p>
+    <div class="grid">
+      <div><label for="m-ay">Academic year</label><input type="text" id="m-ay"></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Term dates</h2>
+    <p class="help">Weeks are counted from the Monday classes start. Week 0 is the week before. Changing a start date moves every event in that term. Dates use the format shown by your browser.</p>
+    <div id="terms"></div>
+  </section>
+
+  <section class="panel">
+    <h2>Events and deadlines</h2>
+    <p class="help">Each event sits in a week. The exact date text is an added detail that appears on the card. Use "Approximate" until a date is confirmed.</p>
+    <div class="filters">
+      <div><label for="f-term">Term</label><select id="f-term"></select></div>
+      <div><label for="f-cat">Category</label><select id="f-cat"></select></div>
+      <div style="flex:1"><label for="f-q">Search</label><input type="text" id="f-q" placeholder="Title or date text"></div>
+      <div style="align-self:end"><button class="btn small" type="button" id="btn-add">Add event</button></div>
+    </div>
+    <table class="tbl" id="ev-table">
+      <thead><tr><th>Term</th><th>Week</th><th>Event</th><th>Date text</th><th>Status</th><th>Actions</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <p class="sm-note" id="ev-count"></p>
+  </section>
+
+  <section class="panel">
+    <h2>Key links</h2>
+    <p class="help">The pill links under the header.</p>
+    <div id="links"></div>
+    <button class="btn ghost small" type="button" id="btn-add-link">Add link</button>
+  </section>
+
+  <section class="panel">
+    <h2>Course coordinators</h2>
+    <p class="help">Shown in the dialog that opens from "Submit to your course coordinator". Leave empty to show "coming soon".</p>
+    <div id="coords"></div>
+    <button class="btn ghost small" type="button" id="btn-add-coord">Add coordinator</button>
+  </section>
+</main>
+
+<dialog id="ed"><form class="edit-form" id="ed-form" method="dialog"></form></dialog>
+<div id="toast" class="toast" hidden role="status"></div>
+
+<script src="js/store.js"></script>
+<script src="js/core.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
