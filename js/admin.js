@@ -193,7 +193,7 @@
       d.links.forEach(function (l, i) {
         linkBox.appendChild(h("div", { class: "link-row" },
           h("input", { type: "text", "aria-label": "Link label", placeholder: "Label", value: l.label, oninput: function (ev) { l.label = ev.target.value; } }),
-          h("input", { type: "url", "aria-label": "Link address", placeholder: "https://", value: l.url, oninput: function (ev) { l.url = ev.target.value; } }),
+          h("input", { type: "text", "aria-label": "Link address", placeholder: "https://", value: l.url, oninput: function (ev) { l.url = ev.target.value; } }),
           h("button", { class: "btn danger small", type: "button", onclick: function () { d.links.splice(i, 1); renderLinkRows(); } }, "Remove")));
       });
     }
@@ -246,7 +246,7 @@
         groups.map(function (g) { return h("option", { value: g.id, text: g.label, selected: l.group === g.id }); }));
       box.appendChild(h("div", { class: "key-row" },
         h("input", { type: "text", "aria-label": "Link label", value: l.label, oninput: function (e) { l.label = e.target.value; touch(); } }),
-        h("input", { type: "url", "aria-label": "Link address", value: l.url, oninput: function (e) { l.url = e.target.value; touch(); } }),
+        h("input", { type: "text", "aria-label": "Link address", value: l.url, oninput: function (e) { l.url = e.target.value; touch(); } }),
         sel,
         h("button", { class: "btn danger small", type: "button", onclick: function () { model.links.splice(i, 1); renderLinks(); touch(); } }, "Remove")));
     });

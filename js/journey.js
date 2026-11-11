@@ -86,13 +86,27 @@
     Object.keys(cats).forEach(function (k) {
       var b = h("button", {
         class: "filter", "aria-pressed": selected[k] ? "true" : "false", type: "button",
-        onclick: function () { selected[k] = !selected[k]; refresh(); }
+        onclick: function (ev) {
+          if (ev.ctrlKey || ev.metaKey) {
+            selected[k] = !selected[k];
+          } else {
+            var chosen = Object.keys(selected).filter(function (x) { return selected[x]; });
+            selected = (chosen.length === 1 && chosen[0] === k) ? {} : (function () { var o = {}; o[k] = true; return o; })();
+          }
+          refresh();
+        }
       }, h("span", { class: "sw", style: "background:" + cats[k].color }), cats[k].label);
       box.appendChild(b);
     });
-    if (anySelected()) {
-      box.appendChild(h("button", { class: "filter clear", type: "button", onclick: function () { selected = {}; refresh(); } }, "Show all"));
-    }
+    // Second row: always takes space so the category buttons never move
+    var sub = document.getElementById("legend-sub");
+    sub.innerHTML = "";
+    sub.appendChild(h("span", { class: "legend-hint", text: "Click to show one category. Hold Ctrl or Cmd to pick more." }));
+    sub.appendChild(h("button", {
+      class: "filter clear", type: "button", style: anySelected() ? "" : "visibility:hidden",
+      "aria-hidden": anySelected() ? null : "true", tabindex: anySelected() ? null : "-1",
+      onclick: function () { selected = {}; refresh(); }
+    }, "Show all"));
   }
 
   function refresh() { renderLegend(); renderTerm(); renderAllYear(); }
@@ -229,7 +243,6 @@
     var box = document.getElementById("links");
     box.innerHTML = "";
     Object.keys(cats).forEach(function (k) {
-      if (!visible({ category: k })) return;
       var items = data.events.filter(function (e) { return e.term === "year" && e.category === k; });
       var links = data.links.filter(function (l) { return l.group === k; });
       if (!items.length && !links.length) return;

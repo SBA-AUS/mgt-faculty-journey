@@ -91,7 +91,7 @@
   }
 
   function safeUrl(u) {
-    return /^(https?:|mailto:)/i.test(u || "") ? u : "#";
+    return /^(https?:|mailto:|tel:)/i.test(u || "") ? u : "#";
   }
 
   window.Core = {

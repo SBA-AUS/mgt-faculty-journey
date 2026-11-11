@@ -141,6 +141,20 @@
       "desc": "Student life, health, athletics and graduates",
       "url": "https://www.aus.edu/life-at-aus",
       "group": "dept"
+    },
+    {
+      "id": "ithelp",
+      "label": "IT Help Desk",
+      "desc": "Request IT support (ServiceNow)",
+      "url": "https://servicenow.aus.edu",
+      "group": "dept"
+    },
+    {
+      "id": "rooms",
+      "label": "Room Reservation",
+      "desc": "Reserve academic and administrative rooms",
+      "url": "https://reserve.aus.edu",
+      "group": "dept"
     }
   ],
   "terms": {
@@ -228,6 +242,10 @@
         {
           "label": "Email FRG office",
           "url": "mailto:frg@aus.edu"
+        },
+        {
+          "label": "Email Indu Madhusudhanan",
+          "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
     },
@@ -241,7 +259,12 @@
       "dateText": "",
       "description": "Applications move from Head of Department to Dean, Provost, a committee and the Chancellor. Plan early because each step has its own deadline.",
       "tip": "Talk to your Head of Department in the first weeks of term.",
-      "links": []
+      "links": [
+        {
+          "label": "Email Indu Madhusudhanan",
+          "url": "mailto:imadhusudhanan@aus.edu"
+        }
+      ]
     },
     {
       "id": "f-frgpi",
@@ -257,6 +280,10 @@
         {
           "label": "Faculty research",
           "url": "https://www.aus.edu/research/faculty-research"
+        },
+        {
+          "label": "Email Indu Madhusudhanan",
+          "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
     },
@@ -274,6 +301,10 @@
         {
           "label": "Research at SBA",
           "url": "https://www.aus.edu/sba/research-at-sba"
+        },
+        {
+          "label": "Email Indu Madhusudhanan",
+          "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
     },
@@ -354,6 +385,10 @@
         {
           "label": "AUS Research",
           "url": "https://www.aus.edu/research"
+        },
+        {
+          "label": "Email Indu Madhusudhanan",
+          "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
     },
@@ -487,6 +522,10 @@
         {
           "label": "Research at SBA",
           "url": "https://www.aus.edu/sba/research-at-sba"
+        },
+        {
+          "label": "Email Indu Madhusudhanan",
+          "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
     },
@@ -500,7 +539,12 @@
       "dateText": "",
       "description": "Decisions on Fall sabbatical applications arrive near the end of January.",
       "tip": "",
-      "links": []
+      "links": [
+        {
+          "label": "Email Indu Madhusudhanan",
+          "url": "mailto:imadhusudhanan@aus.edu"
+        }
+      ]
     },
     {
       "id": "s-ug",
@@ -516,6 +560,10 @@
         {
           "label": "Research at SBA",
           "url": "https://www.aus.edu/sba/research-at-sba"
+        },
+        {
+          "label": "Email Indu Madhusudhanan",
+          "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
     },
@@ -529,7 +577,12 @@
       "dateText": "",
       "description": "Decisions on the Faculty Research Grant round arrive in the Spring. Funded projects start the following June.",
       "tip": "",
-      "links": []
+      "links": [
+        {
+          "label": "Email Indu Madhusudhanan",
+          "url": "mailto:imadhusudhanan@aus.edu"
+        }
+      ]
     },
     {
       "id": "s-mid",
@@ -596,6 +649,10 @@
         {
           "label": "Research at SBA",
           "url": "https://www.aus.edu/sba/research-at-sba"
+        },
+        {
+          "label": "Email Indu Madhusudhanan",
+          "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
     },
@@ -726,7 +783,12 @@
       "dateText": "",
       "description": "Funded projects start. Check your award terms and IRB approvals.",
       "tip": "",
-      "links": []
+      "links": [
+        {
+          "label": "Email Indu Madhusudhanan",
+          "url": "mailto:imadhusudhanan@aus.edu"
+        }
+      ]
     },
     {
       "id": "u-respond",
@@ -805,6 +867,10 @@
         {
           "label": "Research funding",
           "url": "https://www.aus.edu/sba/research-at-sba?t=research-funding"
+        },
+        {
+          "label": "Email Indu Madhusudhanan",
+          "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
     },
@@ -837,6 +903,10 @@
         {
           "label": "AUS Research",
           "url": "https://www.aus.edu/research"
+        },
+        {
+          "label": "Email Indu Madhusudhanan",
+          "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
     },
@@ -853,6 +923,10 @@
         {
           "label": "Faculty research",
           "url": "https://www.aus.edu/research/faculty-research"
+        },
+        {
+          "label": "Email Indu Madhusudhanan",
+          "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
     },
@@ -869,6 +943,10 @@
         {
           "label": "Research funding",
           "url": "https://www.aus.edu/sba/research-at-sba?t=research-funding"
+        },
+        {
+          "label": "Email Indu Madhusudhanan",
+          "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
     },
@@ -885,6 +963,10 @@
         {
           "label": "AUS Research",
           "url": "https://www.aus.edu/research"
+        },
+        {
+          "label": "Email Indu Madhusudhanan",
+          "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
     },
@@ -895,9 +977,14 @@
       "audience": "all",
       "title": "SBA \"What's On This Week\" digest",
       "dateText": "Weekly",
-      "description": "A weekly email listing student and school events you can join or promote.",
+      "description": "A weekly email listing student and school events you can join or promote. Email your events to Amal Alkadri to have them included.",
       "tip": "",
-      "links": []
+      "links": [
+        {
+          "label": "Email aalkadri@aus.edu",
+          "url": "mailto:aalkadri@aus.edu"
+        }
+      ]
     },
     {
       "id": "y-promo",
@@ -926,7 +1013,7 @@
       "title": "Inviting a guest speaker",
       "dateText": "Contact Ms. Abegail A. Morata (Gail)",
       "description": "Before you invite a guest speaker, contact Abegail Morata, Administrative Assistant in the department, for guidance on the process. Office extension 2302.",
-      "tip": "Allow plenty of notice for approvals and campus access.",
+      "tip": "Submit at least two weeks before the event for approval.",
       "links": [
         {
           "label": "Email abegail@aus.edu",
@@ -941,10 +1028,15 @@
       "category": "students",
       "title": "AIMS student events",
       "dateText": "Throughout the year",
-      "description": "AIMS is the student organization associated with our department. Its events run through the year, so ask the AIMS officers or watch the weekly SBA digest.",
+      "description": "The MS&E student group, Association for Innovation Management and Strategy (AIMS), runs its events throughout the academic year. Please follow them on Instagram.",
       "tip": "Consider offering extra credit or class time for AIMS events.",
       "audience": "all",
-      "links": []
+      "links": [
+        {
+          "label": "AIMS on Instagram",
+          "url": "https://www.instagram.com/aims_aus/"
+        }
+      ]
     },
     {
       "id": "y-career",
@@ -1215,11 +1307,16 @@
       "week": 2,
       "category": "research",
       "title": "Graduate research assistants (GRAs)",
-      "description": "Watch for an email from Indu or Merle about GRA requests for the semester.",
+      "description": "Watch for an email from Indu Madhusudhanan about GRA requests for the semester.",
       "tip": "Ask your Head of Department if you are unsure whether you qualify.",
       "audience": "all",
       "dateText": "",
-      "links": []
+      "links": [
+        {
+          "label": "Email Indu Madhusudhanan",
+          "url": "mailto:imadhusudhanan@aus.edu"
+        }
+      ]
     },
     {
       "id": "f-sched",
@@ -1294,11 +1391,16 @@
       "week": 2,
       "category": "research",
       "title": "Graduate research assistants (GRAs)",
-      "description": "Watch for an email from Indu or Merle about GRA requests for the semester.",
+      "description": "Watch for an email from Indu Madhusudhanan about GRA requests for the semester.",
       "tip": "Ask your Head of Department if you are unsure whether you qualify.",
       "audience": "all",
       "dateText": "",
-      "links": []
+      "links": [
+        {
+          "label": "Email Indu Madhusudhanan",
+          "url": "mailto:imadhusudhanan@aus.edu"
+        }
+      ]
     },
     {
       "id": "s-sched",
@@ -1415,6 +1517,115 @@
       ],
       "audience": "all",
       "dateText": ""
+    },
+    {
+      "id": "f-adddrop",
+      "term": "fall",
+      "week": 1,
+      "category": "students",
+      "title": "Add and drop period",
+      "description": "Students can add or drop courses during the first week. Expect questions from advisees, and check your class list.",
+      "links": [
+        {
+          "label": "Academic calendar",
+          "url": "https://www.aus.edu/academics/services-and-resources/academic-calendar"
+        }
+      ],
+      "audience": "all",
+      "dateText": "",
+      "tip": ""
+    },
+    {
+      "id": "s-adddrop",
+      "term": "spring",
+      "week": 1,
+      "category": "students",
+      "title": "Add and drop period",
+      "description": "Students can add or drop courses during the first week. Expect questions from advisees, and check your class list.",
+      "links": [
+        {
+          "label": "Academic calendar",
+          "url": "https://www.aus.edu/academics/services-and-resources/academic-calendar"
+        }
+      ],
+      "audience": "all",
+      "dateText": "",
+      "tip": ""
+    },
+    {
+      "id": "u-adddrop",
+      "term": "summer",
+      "week": 1,
+      "category": "students",
+      "title": "Add and drop period",
+      "description": "Students can add or drop courses during the first week. Expect questions from advisees, and check your class list.",
+      "links": [
+        {
+          "label": "Academic calendar",
+          "url": "https://www.aus.edu/academics/services-and-resources/academic-calendar"
+        }
+      ],
+      "audience": "all",
+      "dateText": "",
+      "tip": ""
+    },
+    {
+      "id": "f-earlyreg",
+      "term": "fall",
+      "week": 12,
+      "category": "students",
+      "title": "Early registration",
+      "description": "Registration for the next term opens. Remind advisees to clear their advising holds and register on time.",
+      "links": [
+        {
+          "label": "Academic calendar",
+          "url": "https://www.aus.edu/academics/services-and-resources/academic-calendar"
+        },
+        {
+          "label": "Management Major Map",
+          "url": "https://sba-aus.github.io/mgt-major-map/"
+        }
+      ],
+      "audience": "all",
+      "dateText": "",
+      "tip": ""
+    },
+    {
+      "id": "s-earlyreg",
+      "term": "spring",
+      "week": 12,
+      "category": "students",
+      "title": "Early registration",
+      "description": "Registration for the next term opens. Remind advisees to clear their advising holds and register on time.",
+      "links": [
+        {
+          "label": "Academic calendar",
+          "url": "https://www.aus.edu/academics/services-and-resources/academic-calendar"
+        },
+        {
+          "label": "Management Major Map",
+          "url": "https://sba-aus.github.io/mgt-major-map/"
+        }
+      ],
+      "audience": "all",
+      "dateText": "",
+      "tip": ""
+    },
+    {
+      "id": "y-facilities",
+      "term": "year",
+      "category": "dept",
+      "audience": "all",
+      "title": "Facilities and housing requests",
+      "dateText": "Call 06 515 2100",
+      "description": "For facilities and housing requests, call 06 515 2100.",
+      "tip": "",
+      "links": [
+        {
+          "label": "Call 06 515 2100",
+          "url": "tel:+97165152100"
+        }
+      ]
     }
   ],
   "guides": {
