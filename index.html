@@ -34,11 +34,9 @@
 </section>
 
 <main id="main">
-  <nav class="links" id="links" aria-label="Useful links"></nav>
-
   <div class="toolbar">
     <div class="tabs" id="tabs" role="tablist" aria-label="Semester"></div>
-    <div class="legend" id="legend" aria-label="Filter by category"></div>
+    <div class="legend-wrap"><span class="legend-label" id="legend-label">Filters</span><div class="legend" id="legend" role="group" aria-labelledby="legend-label"></div></div>
   </div>
 
   <div id="panel" role="tabpanel">
@@ -53,6 +51,11 @@
     <h2 id="year-h">All year round</h2>
     <p>Things that do not belong to one week. Keep them in mind throughout the year.</p>
     <div class="year-grid" id="year-grid"></div>
+  </section>
+
+  <section class="helpful" aria-labelledby="help-h">
+    <h2 id="help-h">Helpful links</h2>
+    <div class="help-groups" id="links"></div>
   </section>
 </main>
 

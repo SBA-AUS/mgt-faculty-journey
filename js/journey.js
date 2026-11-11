@@ -67,8 +67,16 @@
   function renderLinks() {
     var box = document.getElementById("links");
     box.innerHTML = "";
-    data.links.forEach(function (l) {
-      box.appendChild(h("a", { href: Core.safeUrl(l.url), target: "_blank", rel: "noopener", title: l.desc || "" }, l.label));
+    (data.linkGroups || [{ id: "", label: "Links" }]).forEach(function (g) {
+      var items = data.links.filter(function (l) { return (l.group || "") === g.id; });
+      if (!items.length) return;
+      var ul = h("ul", { class: "help-list" });
+      items.forEach(function (l) {
+        ul.appendChild(h("li", null,
+          h("a", { href: Core.safeUrl(l.url), target: "_blank", rel: "noopener" }, l.label),
+          l.desc ? h("span", { class: "help-desc", text: l.desc }) : null));
+      });
+      box.appendChild(h("div", { class: "help-group" }, h("h3", { text: g.label }), ul));
     });
   }
 
@@ -237,8 +245,15 @@
   function renderYear() {
     var grid = document.getElementById("year-grid");
     grid.innerHTML = "";
-    data.events.filter(function (e) { return e.term === "year" && visible(e); }).forEach(function (e) {
-      grid.appendChild(chip(e));
+    var all = data.events.filter(function (e) { return e.term === "year" && visible(e); });
+    Object.keys(cats).forEach(function (k) {
+      var items = all.filter(function (e) { return e.category === k; });
+      if (!items.length) return;
+      var row = h("div", { class: "year-cards" });
+      items.forEach(function (e) { row.appendChild(chip(e)); });
+      grid.appendChild(h("div", { class: "year-group" },
+        h("h3", null, h("span", { class: "sw", style: "background:" + cats[k].color }), cats[k].label),
+        row));
     });
   }
 

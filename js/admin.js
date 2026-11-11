@@ -53,7 +53,7 @@
     fc.onchange = function () { filter.cat = fc.value; renderEvents(); };
     $("f-q").oninput = function (e) { filter.q = e.target.value.toLowerCase(); renderEvents(); };
     $("btn-add").onclick = function () { editEvent(null); };
-    $("btn-add-link").onclick = function () { model.links.push({ id: "l" + Date.now(), label: "", url: "", desc: "" }); renderLinks(); touch(); };
+    $("btn-add-link").onclick = function () { model.links.push({ id: "l" + Date.now(), label: "", url: "", desc: "", group: ((model.linkGroups || [])[0] || {}).id || "" }); renderLinks(); touch(); };
     $("btn-add-coord").onclick = function () { model.coordinators.push({ course: "", name: "", coordinator: "", email: "" }); renderCoords(); touch(); };
     $("btn-save").onclick = save;
     $("btn-discard").onclick = function () {
@@ -242,10 +242,14 @@
   /* ---------- links ---------- */
   function renderLinks() {
     var box = $("links"); box.innerHTML = "";
+    var groups = model.linkGroups || [];
     model.links.forEach(function (l, i) {
-      box.appendChild(h("div", { class: "link-row" },
+      var sel = h("select", { "aria-label": "Group", onchange: function (e) { l.group = e.target.value; touch(); } },
+        groups.map(function (g) { return h("option", { value: g.id, text: g.label, selected: l.group === g.id }); }));
+      box.appendChild(h("div", { class: "key-row" },
         h("input", { type: "text", "aria-label": "Link label", value: l.label, oninput: function (e) { l.label = e.target.value; touch(); } }),
         h("input", { type: "url", "aria-label": "Link address", value: l.url, oninput: function (e) { l.url = e.target.value; touch(); } }),
+        sel,
         h("button", { class: "btn danger small", type: "button", onclick: function () { model.links.splice(i, 1); renderLinks(); touch(); } }, "Remove")));
     });
   }

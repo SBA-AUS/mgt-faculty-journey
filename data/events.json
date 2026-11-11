@@ -24,94 +24,109 @@
   },
   "links": [
     {
-      "id": "dept",
-      "label": "MSE Department page",
-      "url": "https://www.aus.edu/sba/department-of-management-strategy-entrepreneurship",
-      "desc": "People, programs and news"
-    },
-    {
-      "id": "majormap",
-      "label": "Management Major Map",
-      "url": "https://sba-aus.github.io/mgt-major-map/",
-      "desc": "Use it when advising students"
-    },
-    {
       "id": "sbaresearch",
       "label": "Research at SBA",
       "url": "https://www.aus.edu/sba/research-at-sba",
-      "desc": "School grants, awards and support"
+      "desc": "School grants, awards and support",
+      "group": "research"
     },
     {
       "id": "research",
       "label": "AUS Research",
       "url": "https://www.aus.edu/research",
-      "desc": "Office of Research, IRB and CITI information"
+      "desc": "Office of Research, IRB and CITI information",
+      "group": "research"
     },
     {
       "id": "funding",
       "label": "Research funding at SBA",
       "url": "https://www.aus.edu/sba/research-at-sba?t=research-funding",
-      "desc": "Current internal funding schemes"
+      "desc": "Current internal funding schemes",
+      "group": "research"
     },
     {
       "id": "facresearch",
       "label": "Faculty research",
       "url": "https://www.aus.edu/research/faculty-research",
-      "desc": "Grants, policies and forms"
+      "desc": "Grants, policies and forms",
+      "group": "research"
     },
     {
       "id": "ilearn",
       "label": "iLearn Research Services",
       "url": "https://ilearn.aus.edu/ultra/organizations/_49764_1/cl/outline",
-      "desc": "Grant documents and templates"
+      "desc": "Grant documents and templates",
+      "group": "research"
     },
     {
       "id": "dm",
       "label": "Digital Measures",
       "url": "https://www.digitalmeasures.com/login/aus/faculty/",
-      "desc": "Annual report and activity record"
+      "desc": "Annual report and activity record",
+      "group": "teaching"
     },
     {
       "id": "watermark",
       "label": "Watermark (Planning & Self-Study)",
       "url": "https://go.aus.edu/pss",
-      "desc": "Course files and assurance of learning"
+      "desc": "Course files and assurance of learning",
+      "group": "teaching"
     },
     {
       "id": "banner",
       "label": "Banner",
       "url": "https://banner.aus.edu",
-      "desc": "Midterm and final grades (Faculty Services)"
+      "desc": "Midterm and final grades (Faculty Services)",
+      "group": "teaching"
     },
     {
       "id": "calendar",
       "label": "Academic calendar",
       "url": "https://www.aus.edu/academics/services-and-resources/academic-calendar",
-      "desc": "Official dates for every term"
+      "desc": "Official dates for every term",
+      "group": "teaching"
     },
     {
       "id": "handbook",
       "label": "Faculty Handbook",
       "url": "https://aus.edu/sites/default/files/2024_-_faculty_handbook_-_july_8_2024.pdf",
-      "desc": "July 2024 edition. Check for a newer version"
+      "desc": "July 2024 edition. Check for a newer version",
+      "group": "teaching"
+    },
+    {
+      "id": "majormap",
+      "label": "Management Major Map",
+      "url": "https://sba-aus.github.io/mgt-major-map/",
+      "desc": "Use it when advising students",
+      "group": "students"
     },
     {
       "id": "studentlife",
       "label": "Student Life",
       "url": "https://www.aus.edu/life-at-aus/student-life",
-      "desc": "Clubs, events and student support"
+      "desc": "Clubs, events and student support",
+      "group": "students"
     },
     {
       "id": "careers",
       "label": "Career Services",
       "url": "https://www.aus.edu/life-at-aus/career-services",
-      "desc": "Career Forum, recruitment and workshops"
+      "desc": "Career Forum, recruitment and workshops",
+      "group": "students"
+    },
+    {
+      "id": "dept",
+      "label": "MSE Department page",
+      "url": "https://www.aus.edu/sba/department-of-management-strategy-entrepreneurship",
+      "desc": "People, programs and news",
+      "group": "dept"
     },
     {
       "id": "outlets",
       "label": "Commercial outlets",
       "url": "https://www.aus.edu/life-at-aus/commercial-outlets",
-      "desc": "Cafes, shops and services on campus"
+      "desc": "Cafes, shops and services on campus",
+      "group": "dept"
     }
   ],
   "terms": {
@@ -234,25 +249,6 @@
           "label": "Faculty Handbook",
           "url": "https://aus.edu/sites/default/files/2024_-_faculty_handbook_-_july_8_2024.pdf"
         },
-        {
-          "label": "Digital Measures",
-          "url": "https://www.digitalmeasures.com/login/aus/faculty/"
-        }
-      ]
-    },
-    {
-      "id": "f-annrep",
-      "term": "fall",
-      "week": 2,
-      "category": "dept",
-      "audience": "all",
-      "status": "confirmed",
-      "title": "Department annual report input",
-      "dateText": "Draft Tue Sep 1; additions due Thu Sep 3, 2026",
-      "history": [],
-      "description": "The department compiles its annual report in the first weeks of the Fall. Send your additions when asked.",
-      "tip": "Keep your Digital Measures record current so this is quick.",
-      "links": [
         {
           "label": "Digital Measures",
           "url": "https://www.digitalmeasures.com/login/aus/faculty/"
@@ -1508,6 +1504,24 @@
         }
       ],
       "audience": "all"
+    }
+  ],
+  "linkGroups": [
+    {
+      "id": "research",
+      "label": "Research and grants"
+    },
+    {
+      "id": "teaching",
+      "label": "Teaching and records"
+    },
+    {
+      "id": "students",
+      "label": "Students and advising"
+    },
+    {
+      "id": "dept",
+      "label": "Department and campus"
     }
   ]
 }
