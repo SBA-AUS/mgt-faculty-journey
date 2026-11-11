@@ -1,7 +1,7 @@
 (function () {
   var h = Core.h;
   var data, cats, now, current, activeTerm;
-  var hiddenCats = {};
+  var selected = {};  // categories the visitor chose to show; none chosen means show all
   var TERM_ORDER = ["fall", "spring", "summer"];
 
   var mode = /[?&]preview=draft/.test(location.search) ? "preview" : "public";
@@ -30,12 +30,11 @@
     var u = d.meta.updated ? Core.parse(d.meta.updated) : null;
     document.getElementById("updated").textContent = u ? ("0" + u.getDate()).slice(-2) + "-" + Core.MONTHS[u.getMonth()] + "-" + u.getFullYear() : "";
 
-    renderLinks();
     renderTabs();
     renderLegend();
     renderStats();
     renderTerm();
-    renderYear();
+    renderAllYear();
     openFromHash();
   }
 
@@ -64,22 +63,6 @@
   function catOf(e) { return cats[e.category] || { label: e.category, color: "#999" }; }
 
   /* ---------- header bits ---------- */
-  function renderLinks() {
-    var box = document.getElementById("links");
-    box.innerHTML = "";
-    (data.linkGroups || [{ id: "", label: "Links" }]).forEach(function (g) {
-      var items = data.links.filter(function (l) { return (l.group || "") === g.id; });
-      if (!items.length) return;
-      var ul = h("ul", { class: "help-list" });
-      items.forEach(function (l) {
-        ul.appendChild(h("li", null,
-          h("a", { href: Core.safeUrl(l.url), target: "_blank", rel: "noopener" }, l.label),
-          l.desc ? h("span", { class: "help-desc", text: l.desc }) : null));
-      });
-      box.appendChild(h("div", { class: "help-group" }, h("h3", { text: g.label }), ul));
-    });
-  }
-
   function renderTabs() {
     var box = document.getElementById("tabs");
     box.innerHTML = "";
@@ -95,21 +78,24 @@
     });
   }
 
+  function anySelected() { return Object.keys(selected).some(function (k) { return selected[k]; }); }
+
   function renderLegend() {
     var box = document.getElementById("legend");
     box.innerHTML = "";
     Object.keys(cats).forEach(function (k) {
       var b = h("button", {
-        class: "filter", "aria-pressed": "true", type: "button",
-        onclick: function () {
-          hiddenCats[k] = !hiddenCats[k];
-          b.setAttribute("aria-pressed", hiddenCats[k] ? "false" : "true");
-          renderTerm(); renderYear();
-        }
+        class: "filter", "aria-pressed": selected[k] ? "true" : "false", type: "button",
+        onclick: function () { selected[k] = !selected[k]; refresh(); }
       }, h("span", { class: "sw", style: "background:" + cats[k].color }), cats[k].label);
       box.appendChild(b);
     });
+    if (anySelected()) {
+      box.appendChild(h("button", { class: "filter clear", type: "button", onclick: function () { selected = {}; refresh(); } }, "Show all"));
+    }
   }
+
+  function refresh() { renderLegend(); renderTerm(); renderAllYear(); }
 
   /* ---------- stats band ---------- */
   function renderStats() {
@@ -125,7 +111,7 @@
     var s1 = h("div", { class: "stat" }, h("h2", { text: "Where we are" }));
     if (where) {
       var t = data.terms[where.term];
-      s1.appendChild(h("p", { class: "big", text: t.label + ", " + where.row.title.toLowerCase().replace(/^./, function (c) { return c.toUpperCase(); }) }));
+      s1.appendChild(h("p", { class: "big", text: t.label + ", " + where.row.title }));
       s1.appendChild(h("p", { class: "small", text: where.row.sub }));
     } else {
       var up = null;
@@ -178,16 +164,15 @@
   }
 
   /* ---------- timeline ---------- */
-  function visible(e) { return !hiddenCats[e.category]; }
+  function visible(e) { return !anySelected() || !!selected[e.category]; }
 
   function chip(e) {
     var c = catOf(e);
     var meta = e.dateText || "";
-    var ap = e.status === "approx" ? h("span", { class: "ap", text: "approx." }) : null;
     return h("button", {
       class: "chip", type: "button", style: "--cc:" + c.color, "data-id": e.id,
       onclick: function () { openEvent(e.id); }
-    }, h("span", { class: "t" }, e.title, ap), meta ? h("span", { class: "m", text: meta }) : null);
+    }, h("span", { class: "t", text: e.title }), meta ? h("span", { class: "m", text: meta }) : null);
   }
 
   function renderTerm() {
@@ -195,10 +180,8 @@
     var panel = document.getElementById("panel");
     panel.setAttribute("aria-labelledby", "tab-" + activeTerm);
     var info = document.getElementById("term-info");
-    var breaks = (t.breaks || []).map(function (b) { return "Week " + b.week + ": " + b.label; });
     info.textContent = "Classes start " + Core.short(Core.parse(t.start)) + ", " + Core.parse(t.start).getFullYear() +
-      ". " + t.weeks + " weeks. Finals " + Core.range(Core.parse(t.finalsStart), Core.parse(t.finalsEnd)) + "." +
-      (breaks.length ? " " + breaks.join("; ") + "." : "");
+      ". " + t.weeks + " weeks. Finals " + Core.range(Core.parse(t.finalsStart), Core.parse(t.finalsEnd)) + ".";
 
     var body = document.getElementById("rows");
     body.innerHTML = "";
@@ -220,7 +203,7 @@
     rs.forEach(function (r) {
       var evs = eventsInRow(activeTerm, r).filter(visible);
       var isCur = !!cur && cur.key === r.key;
-      var isBreak = !!r.breakLabel;
+      var isBreak = !!r.isBreak;
       var skipIfEmpty = (r.key === "finals" || r.key === "after");
       if (!evs.length && !isCur && !isBreak) {
         if (skipIfEmpty) { flush(); return; }
@@ -234,7 +217,7 @@
         h("span", { class: "d", text: r.sub }),
         isCur ? h("span", { class: "now", text: "This week" }) : null);
       var cell = h("div", { class: "wk-b" });
-      if (isBreak) cell.appendChild(h("div", { text: r.breakLabel + ". No classes." }));
+      if (isBreak) cell.appendChild(h("div", { text: "No classes." }));
       evs.forEach(function (e) { cell.appendChild(chip(e)); });
       if (!evs.length && !isBreak) cell.appendChild(h("div", { class: "sm-note", text: "Nothing scheduled this week" }));
       body.appendChild(h("div", { class: cls }, head, cell));
@@ -242,18 +225,27 @@
     flush();
   }
 
-  function renderYear() {
-    var grid = document.getElementById("year-grid");
-    grid.innerHTML = "";
-    var all = data.events.filter(function (e) { return e.term === "year" && visible(e); });
+  function renderAllYear() {
+    var box = document.getElementById("links");
+    box.innerHTML = "";
     Object.keys(cats).forEach(function (k) {
-      var items = all.filter(function (e) { return e.category === k; });
-      if (!items.length) return;
-      var row = h("div", { class: "year-cards" });
-      items.forEach(function (e) { row.appendChild(chip(e)); });
-      grid.appendChild(h("div", { class: "year-group" },
-        h("h3", null, h("span", { class: "sw", style: "background:" + cats[k].color }), cats[k].label),
-        row));
+      if (!visible({ category: k })) return;
+      var items = data.events.filter(function (e) { return e.term === "year" && e.category === k; });
+      var links = data.links.filter(function (l) { return l.group === k; });
+      if (!items.length && !links.length) return;
+      var ul = h("ul", { class: "help-list" });
+      items.forEach(function (e) {
+        ul.appendChild(h("li", null,
+          h("button", { class: "help-link", type: "button", onclick: function () { openEvent(e.id); } }, e.title),
+          e.dateText ? h("span", { class: "help-desc", text: e.dateText }) : null));
+      });
+      links.forEach(function (l) {
+        ul.appendChild(h("li", null,
+          h("a", { href: Core.safeUrl(l.url), target: "_blank", rel: "noopener" }, l.label),
+          l.desc ? h("span", { class: "help-desc", text: l.desc }) : null));
+      });
+      box.appendChild(h("div", { class: "help-group", style: "--cc:" + cats[k].color },
+        h("h3", null, h("span", { class: "sw", style: "background:" + cats[k].color }), cats[k].label), ul));
     });
   }
 
@@ -271,23 +263,15 @@
     pc.appendChild(h("button", { class: "x", type: "button", "aria-label": "Close", onclick: function () { dlg.close(); } }, "×"));
     pc.appendChild(h("p", { class: "cat", text: c.label }));
     pc.appendChild(h("h3", { id: "ev-title", text: e.title }));
-    if (e.dateText) {
-      pc.appendChild(h("p", { class: "when" }, e.dateText,
-        e.status === "approx" ? h("span", { class: "badge", text: "Approximate" }) : null));
-    } else if (e.status === "approx") {
-      pc.appendChild(h("p", { class: "when" }, "Timing", h("span", { class: "badge", text: "Approximate" })));
-    }
+    if (e.dateText) pc.appendChild(h("p", { class: "when", text: e.dateText }));
     if (e.description) pc.appendChild(h("p", { text: e.description }));
     if (e.tip) pc.appendChild(h("p", { class: "tip" }, h("strong", { text: "Tip: " }), e.tip));
-    if (e.history && e.history.length) {
-      pc.appendChild(h("p", { class: "hist-title", text: "Previous years" }));
-      var ul = h("ul", { class: "hist" });
-      e.history.forEach(function (x) { ul.appendChild(h("li", { text: x })); });
-      pc.appendChild(ul);
-    }
     var acts = h("div", { class: "acts" });
     if (e.action === "coordinators") {
       acts.appendChild(h("button", { class: "btn", type: "button", onclick: function () { dlg.close(); openCoordinators(); } }, "Submit to your course coordinator"));
+    }
+    if (e.action === "examguide") {
+      acts.appendChild(h("button", { class: "btn", type: "button", onclick: function () { dlg.close(); openGuide("exam"); } }, "How to read the schedule"));
     }
     (e.links || []).forEach(function (l) {
       acts.appendChild(h("a", { class: "btn ghost", href: Core.safeUrl(l.url), target: "_blank", rel: "noopener" }, l.label));
@@ -302,9 +286,9 @@
   function openCoordinators() {
     var box = document.getElementById("coord-body");
     box.innerHTML = "";
-    var pc = h("div", { class: "pc", style: "--cc:var(--c-teaching)" });
+    var pc = h("div", { class: "pc", style: "--cc:" + (cats.teaching ? cats.teaching.color : "#1f5f99") });
     pc.appendChild(h("button", { class: "x", type: "button", "aria-label": "Close", onclick: function () { cdlg.close(); } }, "×"));
-    pc.appendChild(h("p", { class: "cat", text: "Teaching & Courses" }));
+    pc.appendChild(h("p", { class: "cat", text: cats.teaching ? cats.teaching.label : "Teaching" }));
     pc.appendChild(h("h3", { id: "coord-title", text: "Course coordinators" }));
     pc.appendChild(h("p", { text: "Send your syllabus to the coordinator of your course for approval, then to the Head of Department." }));
     var list = data.coordinators || [];
@@ -332,7 +316,26 @@
     if (!cdlg.open) cdlg.showModal();
   }
 
-  [dlg, cdlg].forEach(function (d) {
+  var gdlg = document.getElementById("guide-dialog");
+  function openGuide(key) {
+    var g = (data.guides || {})[key];
+    if (!g) return;
+    var box = document.getElementById("guide-body");
+    box.innerHTML = "";
+    var pc = h("div", { class: "pc", style: "--cc:" + (cats.teaching ? cats.teaching.color : "#1f5f99") });
+    pc.appendChild(h("button", { class: "x", type: "button", "aria-label": "Close", onclick: function () { gdlg.close(); } }, "\u00d7"));
+    pc.appendChild(h("p", { class: "cat", text: "Final exams" }));
+    pc.appendChild(h("h3", { id: "guide-title", text: g.title }));
+    g.sections.forEach(function (s) {
+      pc.appendChild(h("h4", { class: "guide-h", text: s.heading }));
+      pc.appendChild(h("p", { text: s.text }));
+    });
+    box.appendChild(pc);
+    gdlg.setAttribute("aria-labelledby", "guide-title");
+    if (!gdlg.open) gdlg.showModal();
+  }
+
+  [dlg, cdlg, gdlg].forEach(function (d) {
     d.addEventListener("click", function (ev) { if (ev.target === d) d.close(); });
   });
   dlg.addEventListener("close", function () {

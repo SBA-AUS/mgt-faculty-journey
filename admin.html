@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Admin | Faculty Journey</title>
+<title>Admin | MSE Faculty Experience Journey</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 <body>
 <div class="admin-bar">
   <div>
-    <strong style="font-family:Montserrat,sans-serif">Faculty Journey: Admin</strong>
+    <strong style="font-family:Montserrat,sans-serif">MSE Faculty Experience Journey: Admin</strong>
     <span class="state" id="state" role="status">Loading...</span>
   </div>
   <div class="row">
@@ -36,13 +36,13 @@
 
   <section class="panel">
     <h2>Term dates</h2>
-    <p class="help">Weeks are counted from the Monday classes start. Week 0 is the week before. Changing a start date moves every event in that term. Dates use the format shown by your browser.</p>
+    <p class="help">Weeks are counted from the Monday classes start. Week 0 is the week before. Breaks sit between numbered weeks and are not counted. Changing a start date moves every event in that term.</p>
     <div id="terms"></div>
   </section>
 
   <section class="panel">
     <h2>Events and deadlines</h2>
-    <p class="help">Each event sits in a week. The exact date text is an added detail that appears on the card. Use "Approximate" until a date is confirmed.</p>
+    <p class="help">Each event sits in a numbered teaching week. Breaks are not numbered. The optional note appears under the title.</p>
     <div class="filters">
       <div><label for="f-term">Term</label><select id="f-term"></select></div>
       <div><label for="f-cat">Category</label><select id="f-cat"></select></div>
@@ -50,7 +50,7 @@
       <div style="align-self:end"><button class="btn small" type="button" id="btn-add">Add event</button></div>
     </div>
     <table class="tbl" id="ev-table">
-      <thead><tr><th>Term</th><th>Week</th><th>Event</th><th>Date text</th><th>Status</th><th>Actions</th></tr></thead>
+      <thead><tr><th>Term</th><th>Week</th><th>Event</th><th>Note</th><th>Actions</th></tr></thead>
       <tbody></tbody>
     </table>
     <p class="sm-note" id="ev-count"></p>
@@ -58,7 +58,7 @@
 
   <section class="panel">
     <h2>Key links</h2>
-    <p class="help">Shown in the Helpful links section below the timeline, grouped by the category you pick.</p>
+    <p class="help">Shown in the All year round section below the timeline, grouped by the category you pick.</p>
     <div id="links"></div>
     <button class="btn ghost small" type="button" id="btn-add-link">Add link</button>
   </section>

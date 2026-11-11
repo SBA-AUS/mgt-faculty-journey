@@ -53,7 +53,7 @@
     fc.onchange = function () { filter.cat = fc.value; renderEvents(); };
     $("f-q").oninput = function (e) { filter.q = e.target.value.toLowerCase(); renderEvents(); };
     $("btn-add").onclick = function () { editEvent(null); };
-    $("btn-add-link").onclick = function () { model.links.push({ id: "l" + Date.now(), label: "", url: "", desc: "", group: ((model.linkGroups || [])[0] || {}).id || "" }); renderLinks(); touch(); };
+    $("btn-add-link").onclick = function () { model.links.push({ id: "l" + Date.now(), label: "", url: "", desc: "", group: Object.keys(model.categories)[0] }); renderLinks(); touch(); };
     $("btn-add-coord").onclick = function () { model.coordinators.push({ course: "", name: "", coordinator: "", email: "" }); renderCoords(); touch(); };
     $("btn-save").onclick = save;
     $("btn-discard").onclick = function () {
@@ -90,17 +90,17 @@
       var g = h("div", { class: "grid" },
         field("Label", text("t-" + k + "-l", t.label, function (v) { t.label = v; }), "t-" + k + "-l"),
         field("Classes start (Monday)", text("t-" + k + "-s", t.start, function (v) { t.start = v; }, "date"), "t-" + k + "-s"),
-        field("Teaching weeks", text("t-" + k + "-w", t.weeks, function (v) { t.weeks = parseInt(v, 10) || 1; }, "number"), "t-" + k + "-w"),
+        field("Numbered teaching weeks", text("t-" + k + "-w", t.weeks, function (v) { t.weeks = parseInt(v, 10) || 1; }, "number"), "t-" + k + "-w"),
         field("Finals start", text("t-" + k + "-fs", t.finalsStart, function (v) { t.finalsStart = v; }, "date"), "t-" + k + "-fs"),
         field("Finals end", text("t-" + k + "-fe", t.finalsEnd, function (v) { t.finalsEnd = v; }, "date"), "t-" + k + "-fe"));
-      var br = h("div", { class: "breaks" }, h("label", { text: "Breaks (a week with no classes)" }));
+      var br = h("div", { class: "breaks" }, h("label", { text: "Breaks (a week with no classes, not numbered)" }));
       (t.breaks || []).forEach(function (b, i) {
         br.appendChild(h("div", { class: "break-row" },
-          h("input", { type: "number", "aria-label": "Break week", value: b.week, oninput: function (e) { b.week = parseInt(e.target.value, 10) || 1; touch(); } }),
+          h("input", { type: "number", "aria-label": "Insert after teaching week", title: "Insert after teaching week", value: b.after, oninput: function (e) { b.after = parseInt(e.target.value, 10) || 1; touch(); } }),
           h("input", { type: "text", "aria-label": "Break label", value: b.label, oninput: function (e) { b.label = e.target.value; touch(); } }),
           h("button", { class: "btn danger small", type: "button", onclick: function () { t.breaks.splice(i, 1); renderTerms(); touch(); } }, "Remove")));
       });
-      br.appendChild(h("button", { class: "btn ghost small", type: "button", onclick: function () { t.breaks = t.breaks || []; t.breaks.push({ week: 1, label: "Break" }); renderTerms(); touch(); } }, "Add break"));
+      br.appendChild(h("button", { class: "btn ghost small", type: "button", onclick: function () { t.breaks = t.breaks || []; t.breaks.push({ after: 1, label: "Break" }); renderTerms(); touch(); } }, "Add break"));
       box.appendChild(h("div", { class: "term-block" }, h("h3", { text: k.charAt(0).toUpperCase() + k.slice(1) }), g, br));
     });
   }
@@ -131,8 +131,7 @@
         h("td", { "data-label": "Term", text: e.term }),
         h("td", { "data-label": "Week", text: weekText(e) }),
         h("td", { "data-label": "Event" }, h("span", { class: "tag", style: "background:" + c.color, text: c.label }), " ", e.title),
-        h("td", { "data-label": "Date text", text: e.dateText || "" }),
-        h("td", { "data-label": "Status", text: e.status === "approx" ? "Approximate" : "Confirmed" }),
+        h("td", { "data-label": "Note", text: e.dateText || "" }),
         h("td", { "data-label": "Actions" },
           h("div", { class: "row" },
             h("button", { class: "btn ghost small", type: "button", onclick: function () { editEvent(e); } }, "Edit"),
@@ -154,7 +153,7 @@
 
   function editEvent(e) {
     var isNew = !e;
-    var d = isNew ? { id: "ev" + Date.now(), term: "fall", week: 1, category: "teaching", audience: "all", status: "approx", title: "", dateText: "", history: [], description: "", tip: "", links: [] } : clone(e);
+    var d = isNew ? { id: "ev" + Date.now(), term: "fall", week: 1, category: "teaching", audience: "all", title: "", dateText: "", description: "", tip: "", links: [] } : clone(e);
     var form = $("ed-form"); form.innerHTML = "";
 
     var term = h("select", { id: "e-term" }, ["fall", "spring", "summer", "year"].map(function (k) { return h("option", { value: k, text: k === "year" ? "All year" : k.charAt(0).toUpperCase() + k.slice(1), selected: d.term === k }); }));
@@ -167,7 +166,8 @@
       if (!t) return;
       var rows = Core.rows(t);
       rows.forEach(function (r) {
-        var label = r.title + " (" + r.sub + ")" + (r.breakLabel ? " break" : "");
+        if (r.isBreak) return;
+        var label = r.title + " (" + r.sub + ")";
         week.appendChild(h("option", { value: String(r.key), text: label, selected: String(d.week) === String(r.key) }));
       });
     }
@@ -175,9 +175,6 @@
     fillWeeks();
 
     var cat = h("select", { id: "e-cat" }, Object.keys(model.categories).map(function (k) { return h("option", { value: k, text: model.categories[k].label, selected: d.category === k }); }));
-    var status = h("select", { id: "e-status" },
-      h("option", { value: "confirmed", text: "Confirmed", selected: d.status === "confirmed" }),
-      h("option", { value: "approx", text: "Approximate", selected: d.status === "approx" }));
     var aud = h("select", { id: "e-aud" },
       h("option", { value: "all", text: "All faculty", selected: d.audience === "all" }),
       h("option", { value: "new", text: "Mainly new faculty", selected: d.audience === "new" }));
@@ -185,8 +182,10 @@
     var dateText = h("input", { type: "text", id: "e-date", value: d.dateText || "", placeholder: "For example: Thu Oct 1, 2026, 4 pm" });
     var desc = h("textarea", { id: "e-desc" }, d.description || "");
     var tip = h("input", { type: "text", id: "e-tip", value: d.tip || "" });
-    var hist = h("textarea", { id: "e-hist", placeholder: "One line per previous year" }, (d.history || []).join("\n"));
-    var action = h("input", { type: "checkbox", id: "e-action", checked: d.action === "coordinators" });
+    var action = h("select", { id: "e-action" },
+      h("option", { value: "", text: "None", selected: !d.action }),
+      h("option", { value: "coordinators", text: "Submit to your course coordinator (opens the coordinator list)", selected: d.action === "coordinators" }),
+      h("option", { value: "examguide", text: "How to read the schedule (opens the exam guide)", selected: d.action === "examguide" }));
 
     var linkBox = h("div");
     function renderLinkRows() {
@@ -204,14 +203,13 @@
     form.appendChild(h("div", { class: "grid" },
       h("div", { class: "full" }, h("label", { for: "e-title", text: "Title" }), title),
       field("Term", term, "e-term"), field("Week", week, "e-week"), field("Spans until week (optional)", weekEnd, "e-wend"),
-      field("Category", cat, "e-cat"), field("Status", status, "e-status"), field("Audience", aud, "e-aud"),
-      h("div", { class: "full" }, h("label", { for: "e-date", text: "Date text (added detail for this year)" }), dateText),
+      field("Category", cat, "e-cat"), field("Audience", aud, "e-aud"),
+      h("div", { class: "full" }, h("label", { for: "e-date", text: "Short note under the title (optional, for example Weekly or Due June 1)" }), dateText),
       h("div", { class: "full" }, h("label", { for: "e-desc", text: "Description" }), desc),
       h("div", { class: "full" }, h("label", { for: "e-tip", text: "Tip" }), tip),
-      h("div", { class: "full" }, h("label", { for: "e-hist", text: "Previous years" }), hist),
       h("div", { class: "full" }, h("label", { text: "Links" }), linkBox,
         h("button", { class: "btn ghost small", type: "button", onclick: function () { d.links.push({ label: "", url: "" }); renderLinkRows(); } }, "Add link")),
-      h("div", { class: "full" }, h("label", { for: "e-action", style: "display:inline" }, action, " Show the \"Submit to your course coordinator\" button"))));
+      h("div", { class: "full" }, h("label", { for: "e-action", text: "Extra button" }), action)));
     form.appendChild(h("div", { class: "row" },
       h("button", { class: "btn", type: "submit", value: "ok" }, "Apply"),
       h("button", { class: "btn ghost", type: "button", onclick: function () { $("ed").close(); } }, "Cancel"),
@@ -220,11 +218,11 @@
     form.onsubmit = function (ev) {
       ev.preventDefault();
       if (!title.value.trim()) { title.focus(); return; }
-      d.title = title.value.trim(); d.term = term.value; d.category = cat.value; d.status = status.value; d.audience = aud.value;
+      d.title = title.value.trim(); d.term = term.value; d.category = cat.value; d.audience = aud.value;
       d.dateText = dateText.value.trim(); d.description = desc.value.trim(); d.tip = tip.value.trim();
-      d.history = hist.value.split("\n").map(function (s) { return s.trim(); }).filter(Boolean);
+      delete d.history; delete d.status;
       d.links = d.links.filter(function (l) { return l.url.trim(); }).map(function (l) { return { label: l.label.trim() || l.url.trim(), url: l.url.trim() }; });
-      if (action.checked) d.action = "coordinators"; else delete d.action;
+      if (action.value) d.action = action.value; else delete d.action;
       if (d.term === "year") { delete d.week; delete d.weekEnd; }
       else {
         d.week = (week.value === "finals" || week.value === "after") ? week.value : parseInt(week.value, 10);
@@ -242,7 +240,7 @@
   /* ---------- links ---------- */
   function renderLinks() {
     var box = $("links"); box.innerHTML = "";
-    var groups = model.linkGroups || [];
+    var groups = Object.keys(model.categories).map(function (k) { return { id: k, label: model.categories[k].label }; });
     model.links.forEach(function (l, i) {
       var sel = h("select", { "aria-label": "Group", onchange: function (e) { l.group = e.target.value; touch(); } },
         groups.map(function (g) { return h("option", { value: g.id, text: g.label, selected: l.group === g.id }); }));

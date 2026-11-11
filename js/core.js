@@ -25,24 +25,29 @@
     return new Date(n.getFullYear(), n.getMonth(), n.getDate());
   }
 
-  // Build the list of rows for a term: week 0, weeks 1..N, finals, after.
+  // Build the list of rows for a term: week 0, numbered teaching weeks (breaks are unnumbered
+  // rows inserted after a given week), finals, after the term.
   function rows(term) {
     var start = parse(term.start);
     var fs = parse(term.finalsStart), fe = parse(term.finalsEnd);
     var out = [];
-    var breaks = {};
-    (term.breaks || []).forEach(function (b) { breaks[b.week] = b.label; });
-
-    out.push({ key: 0, title: "Week 0", sub: "Before classes", start: addDays(start, -7), end: addDays(start, -1) });
+    out.push({ key: 0, title: "Week 0", sub: range(addDays(start, -7), addDays(start, -1)), start: addDays(start, -7), end: addDays(start, -1) });
+    var cal = start;
     for (var w = 1; w <= term.weeks; w++) {
-      var s = addDays(start, (w - 1) * 7);
-      var e = addDays(s, 6);
+      var s = cal, e = addDays(s, 6);
       if (fs && e >= fs) e = addDays(fs, -1);
-      out.push({ key: w, title: "Week " + w, sub: range(s, e), start: s, end: e, breakLabel: breaks[w] || "" });
+      out.push({ key: w, title: "Week " + w, sub: range(s, e), start: s, end: e });
+      cal = addDays(cal, 7);
+      (term.breaks || []).forEach(function (b, i) {
+        if (b.after === w) {
+          var bs = cal, be = addDays(bs, 6);
+          out.push({ key: "break" + i, title: b.label, sub: range(bs, be), start: bs, end: be, isBreak: true });
+          cal = addDays(cal, 7);
+        }
+      });
     }
     out.push({ key: "finals", title: "Finals", sub: fs && fe ? range(fs, fe) : "", start: fs, end: fe });
     out.push({ key: "after", title: "After the term", sub: "Wrap-up", start: addDays(fe, 1), end: addDays(fe, 28) });
-    out[0].sub = range(out[0].start, out[0].end);
     return out;
   }
 
