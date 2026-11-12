@@ -208,7 +208,8 @@
       var a = pending[0], b = pending[pending.length - 1];
       var label = pending.length === 1 ? a.title : "Weeks " + a.key + " - " + b.key;
       if (typeof a.key !== "number") label = a.title;
-      body.appendChild(h("div", { class: "wk empty" },
+      var isPast = !!(b.end && b.end < now);
+      body.appendChild(h("div", { class: "wk empty" + (isPast ? " past" : "") },
         h("div", { class: "wk-h" }, h("span", { class: "n", text: label })),
         h("div", { class: "wk-b", text: "Nothing scheduled" })));
       pending = [];

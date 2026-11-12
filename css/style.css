@@ -113,7 +113,7 @@ main { max-width: 1480px; margin: 0 auto; padding: 24px; }
 .wk-h .n { font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 14px; display: block; }
 .wk-h .d { display: block; font-size: 12px; color: var(--ink-2); }
 .wk-h .now { display: inline-block; margin-top: 6px; background: var(--red); color: #fff; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 2px 6px; border-radius: 2px; }
-.wk-b { padding: 10px 12px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; align-content: start; }
+.wk-b { padding: 10px 12px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; align-content: center; align-items: stretch; }
 .wk.current .wk-h { border-left-color: var(--red); background: var(--red-lt); }
 .wk.current { box-shadow: inset 0 0 0 2px var(--red); }
 .wk.past { opacity: .7; }
