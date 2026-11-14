@@ -1,7 +1,7 @@
 {
   "meta": {
     "academicYear": "2026-27",
-    "updated": "2026-11-11",
+    "updated": "2026-11-14",
     "note": "Events are placed by the usual week of the semester. Exact dates change every year."
   },
   "categories": {
@@ -18,7 +18,7 @@
       "color": "#2f8a5b"
     },
     "dept": {
-      "label": "Department & Campus",
+      "label": "Faculty & Department",
       "color": "#b7791f"
     }
   },
@@ -33,7 +33,7 @@
     {
       "id": "calendar",
       "label": "Academic calendar",
-      "desc": "Official dates for every term",
+      "desc": "Official dates for every semester",
       "url": "https://www.aus.edu/academics/services-and-resources/academic-calendar",
       "group": "teaching"
     },
@@ -129,20 +129,6 @@
       "group": "dept"
     },
     {
-      "id": "outlets",
-      "label": "Commercial outlets",
-      "desc": "Cafes, shops and services on campus",
-      "url": "https://www.aus.edu/life-at-aus/commercial-outlets",
-      "group": "dept"
-    },
-    {
-      "id": "lifeaus",
-      "label": "Life at AUS",
-      "desc": "Student life, health, athletics and graduates",
-      "url": "https://www.aus.edu/life-at-aus",
-      "group": "dept"
-    },
-    {
       "id": "ithelp",
       "label": "IT Help Desk",
       "desc": "Request IT support (ServiceNow)",
@@ -159,9 +145,30 @@
     {
       "id": "fusion",
       "label": "Oracle Fusion",
-      "desc": "AUS's HR, finance and procurement system: salary slips, bank and IBAN details, expense reimbursements such as PDG, benefits, education assistance, tuition remission and faculty salary advance. Login or access issues: IT Service Desk, 06 515 2121",
+      "desc": "HR, finance and procurement: salary slips, bank details, reimbursements and benefits",
       "url": "https://fusion.aus.edu",
       "group": "dept"
+    },
+    {
+      "id": "facilities",
+      "label": "Facilities and housing requests",
+      "desc": "Call 06 515 2100",
+      "url": "tel:+97165152100",
+      "group": "campus"
+    },
+    {
+      "id": "outlets",
+      "label": "Commercial outlets",
+      "desc": "Cafes, shops and services on campus",
+      "url": "https://www.aus.edu/life-at-aus/commercial-outlets",
+      "group": "campus"
+    },
+    {
+      "id": "lifeaus",
+      "label": "Life at AUS",
+      "desc": "Student life, health, athletics and graduates",
+      "url": "https://www.aus.edu/life-at-aus",
+      "group": "campus"
     }
   ],
   "terms": {
@@ -199,7 +206,38 @@
       "breaks": []
     }
   },
-  "coordinators": [],
+  "coordinators": [
+    {
+      "course": "BUS 100",
+      "name": "",
+      "coordinator": "Mr. Ahmed El-Assadi",
+      "email": ""
+    },
+    {
+      "course": "MGT 201",
+      "name": "",
+      "coordinator": "Dr. Omar Belkhouja",
+      "email": ""
+    },
+    {
+      "course": "MGT 360",
+      "name": "",
+      "coordinator": "TBA",
+      "email": ""
+    },
+    {
+      "course": "BLW 301",
+      "name": "",
+      "coordinator": "TBA",
+      "email": ""
+    },
+    {
+      "course": "MGT 406",
+      "name": "",
+      "coordinator": "TBA",
+      "email": ""
+    }
+  ],
   "events": [
     {
       "id": "f-dm",
@@ -224,9 +262,9 @@
       "week": 0,
       "category": "teaching",
       "audience": "all",
-      "title": "Syllabus due",
-      "dateText": "",
-      "description": "Send your syllabus to the Head of Department (cc the department assistant). For coordinated courses, your course coordinator approves it first.",
+      "title": "Course Syllabi due",
+      "dateText": "Watch for the template email from the Head of Department",
+      "description": "Watch your email for the syllabus template from the Head of Department, Dr. Virginia Bodolica. It arrives a few days before Week 0. Send your syllabus to the Head of Department, cc Ms. Abegail Morata, Administrative Assistant. For coordinated courses, your course coordinator approves it first.",
       "tip": "Start from the department template and check the coordinator's shared materials.",
       "links": [],
       "action": "coordinators"
@@ -239,7 +277,7 @@
       "audience": "all",
       "title": "Faculty Research Grant (FRG) call opens",
       "dateText": "",
-      "description": "Internal grants of up to AED 500,000 over two years. Read the call, then plan your proposal and budget with your Head of Department.",
+      "description": "Internal grants of up to AED 500,000 over two years. Read the call, then plan your proposal and budget with your Head of Department (Dr. Virginia Bodolica).",
       "tip": "Attend the Q&A session if one is announced.",
       "links": [
         {
@@ -251,7 +289,7 @@
           "url": "mailto:frg@aus.edu"
         },
         {
-          "label": "Contact Indu for information",
+          "label": "Contact Ms. Indu Madhusudhanan for information",
           "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
@@ -265,10 +303,10 @@
       "title": "Sabbatical applications",
       "dateText": "",
       "description": "Applications move from Head of Department to Dean, Provost, a committee and the Chancellor. Plan early because each step has its own deadline.",
-      "tip": "Talk to your Head of Department in the first weeks of term.",
+      "tip": "Talk to your Head of Department in the first weeks of the semester.",
       "links": [
         {
-          "label": "Contact Indu for information",
+          "label": "Contact Ms. Indu Madhusudhanan for information",
           "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
@@ -289,7 +327,7 @@
           "url": "https://www.aus.edu/research/faculty-research"
         },
         {
-          "label": "Contact Indu for information",
+          "label": "Contact Ms. Indu Madhusudhanan for information",
           "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
@@ -310,7 +348,7 @@
           "url": "https://www.aus.edu/sba/research-at-sba"
         },
         {
-          "label": "Contact Indu for information",
+          "label": "Contact Ms. Indu Madhusudhanan for information",
           "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
@@ -394,7 +432,7 @@
           "url": "https://www.aus.edu/research"
         },
         {
-          "label": "Contact Indu for information",
+          "label": "Contact Ms. Indu Madhusudhanan for information",
           "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
@@ -407,7 +445,7 @@
       "audience": "all",
       "title": "Student course evaluations open",
       "dateText": "",
-      "description": "Students evaluate courses near the end of term. Encourage them to respond, ideally with class time to do it.",
+      "description": "Students evaluate courses near the end of the semester. Encourage them to respond, ideally with class time to do it.",
       "tip": "Confirm the exact window with the department.",
       "links": []
     },
@@ -417,9 +455,9 @@
       "week": 13,
       "category": "dept",
       "audience": "all",
-      "title": "End-of-term department meeting",
+      "title": "End-of-semester department meeting",
       "dateText": "",
-      "description": "Review the term, grading and next semester's plans.",
+      "description": "Review the semester, grading and next semester's plans.",
       "tip": "",
       "links": []
     },
@@ -477,7 +515,7 @@
       "audience": "all",
       "title": "Fall course files and CLO reporting",
       "dateText": "",
-      "description": "Upload course files and complete CLO/CAR for the courses you taught this term. The deadline is announced by email each term.",
+      "description": "Upload course files and complete CLO/CAR for the courses you taught this semester. The deadline is announced by email each semester.",
       "tip": "Start your CAR as grades are finalized so it is not a rush later.",
       "links": [
         {
@@ -508,9 +546,9 @@
       "week": 0,
       "category": "teaching",
       "audience": "all",
-      "title": "Syllabus due",
-      "dateText": "",
-      "description": "Send your syllabus to the Head of Department (cc the department assistant). For coordinated courses, your course coordinator approves it first.",
+      "title": "Course Syllabi due",
+      "dateText": "Watch for the template email from the Head of Department",
+      "description": "Watch your email for the syllabus template from the Head of Department, Dr. Virginia Bodolica. It arrives a few days before Week 0. Send your syllabus to the Head of Department, cc Ms. Abegail Morata, Administrative Assistant. For coordinated courses, your course coordinator approves it first.",
       "tip": "",
       "links": [],
       "action": "coordinators"
@@ -531,7 +569,7 @@
           "url": "https://www.aus.edu/sba/research-at-sba"
         },
         {
-          "label": "Contact Indu for information",
+          "label": "Contact Ms. Indu Madhusudhanan for information",
           "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
@@ -548,7 +586,7 @@
       "tip": "",
       "links": [
         {
-          "label": "Contact Indu for information",
+          "label": "Contact Ms. Indu Madhusudhanan for information",
           "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
@@ -569,7 +607,7 @@
           "url": "https://www.aus.edu/sba/research-at-sba"
         },
         {
-          "label": "Contact Indu for information",
+          "label": "Contact Ms. Indu Madhusudhanan for information",
           "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
@@ -586,7 +624,7 @@
       "tip": "",
       "links": [
         {
-          "label": "Contact Indu for information",
+          "label": "Contact Ms. Indu Madhusudhanan for information",
           "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
@@ -662,7 +700,7 @@
           "url": "https://www.aus.edu/sba/research-at-sba"
         },
         {
-          "label": "Contact Indu for information",
+          "label": "Contact Ms. Indu Madhusudhanan for information",
           "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
@@ -675,7 +713,7 @@
       "audience": "all",
       "title": "Spring CLO reporting opens",
       "dateText": "",
-      "description": "Assurance of learning reporting in Watermark opens before the term ends.",
+      "description": "Assurance of learning reporting in Watermark opens before the semester ends.",
       "tip": "",
       "links": [
         {
@@ -760,9 +798,9 @@
       "week": 0,
       "category": "teaching",
       "audience": "all",
-      "title": "Syllabus due",
-      "dateText": "",
-      "description": "Summer terms are short, so send your syllabus as soon as it is ready.",
+      "title": "Course Syllabi due",
+      "dateText": "Watch for the template email from the Head of Department",
+      "description": "Watch your email for the syllabus template from the Head of Department, Dr. Virginia Bodolica. It arrives a few days before Week 0. Summer semesters are short, so send your syllabus as soon as it is ready, cc Ms. Abegail Morata, Administrative Assistant. For coordinated courses, your course coordinator approves it first.",
       "tip": "",
       "links": [],
       "action": "coordinators"
@@ -796,7 +834,7 @@
       "tip": "",
       "links": [
         {
-          "label": "Contact Indu for information",
+          "label": "Contact Ms. Indu Madhusudhanan for information",
           "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
@@ -880,7 +918,7 @@
           "url": "https://www.aus.edu/sba/research-at-sba?t=research-funding"
         },
         {
-          "label": "Contact Indu for information",
+          "label": "Contact Ms. Indu Madhusudhanan for information",
           "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
@@ -916,7 +954,7 @@
           "url": "https://www.aus.edu/research"
         },
         {
-          "label": "Contact Indu for information",
+          "label": "Contact Ms. Indu Madhusudhanan for information",
           "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
@@ -936,7 +974,7 @@
           "url": "https://www.aus.edu/research/faculty-research"
         },
         {
-          "label": "Contact Indu for information",
+          "label": "Contact Ms. Indu Madhusudhanan for information",
           "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
@@ -956,7 +994,7 @@
           "url": "https://www.aus.edu/sba/research-at-sba?t=research-funding"
         },
         {
-          "label": "Contact Indu for information",
+          "label": "Contact Ms. Indu Madhusudhanan for information",
           "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
@@ -976,7 +1014,7 @@
           "url": "https://www.aus.edu/research"
         },
         {
-          "label": "Contact Indu for information",
+          "label": "Contact Ms. Indu Madhusudhanan for information",
           "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
@@ -988,7 +1026,7 @@
       "audience": "all",
       "title": "SBA \"What's On This Week\" digest",
       "dateText": "Weekly",
-      "description": "A weekly email listing student and school events you can join or promote. Email your events to Amal Alkadri to have them included.",
+      "description": "A weekly email listing student and school events you can join or promote. Email your events to Ms. Amal Alkadri to have them included.",
       "tip": "",
       "links": [
         {
@@ -1020,14 +1058,14 @@
     {
       "id": "y-speaker",
       "term": "year",
-      "category": "students",
+      "category": "teaching",
       "title": "Inviting a guest speaker",
-      "dateText": "Contact Ms. Abegail A. Morata (Gail)",
-      "description": "Before you invite a guest speaker, contact Abegail Morata, Administrative Assistant in the department, for guidance on the process. Office extension 2302.",
+      "dateText": "Contact Ms. Abegail Morata",
+      "description": "Before you invite a guest speaker, contact Ms. Abegail Morata, Administrative Assistant in the department, for the current forms and process. They change often, so ask before you plan. Office extension 2302.",
       "tip": "Submit at least two weeks before the event for approval.",
       "links": [
         {
-          "label": "Email abegail@aus.edu",
+          "label": "Email Ms. Abegail Morata",
           "url": "mailto:abegail@aus.edu"
         }
       ],
@@ -1076,7 +1114,7 @@
       "category": "teaching",
       "title": "Final exam schedule",
       "dateText": "",
-      "description": "The Registrar publishes two schedules each term: the regular schedule and the common exam schedule. Use the guide to read them. Students must show their AUS ID, and make-up exams run on the last day of the exam period.",
+      "description": "The Registrar publishes two schedules each semester: the regular schedule and the common exam schedule. Use the guide to read them. Students must show their AUS ID, and make-up exams run on the last day of the exam period.",
       "tip": "Tell your students to check both schedules.",
       "links": [
         {
@@ -1102,8 +1140,8 @@
       "category": "teaching",
       "title": "Final exam schedule",
       "dateText": "",
-      "description": "The Registrar posts the regular and common exam schedules for each term on its page. Use the guide to read them.",
-      "tip": "The Registrar page lists the current term's PDFs when they are published.",
+      "description": "The Registrar posts the regular and common exam schedules for each semester on its page. Use the guide to read them.",
+      "tip": "The Registrar page lists the current semester's PDFs when they are published.",
       "links": [
         {
           "label": "Registrar's Services (final exams)",
@@ -1120,8 +1158,8 @@
       "category": "teaching",
       "title": "Final exam schedule",
       "dateText": "",
-      "description": "The Registrar posts the regular and common exam schedules for each term on its page. Use the guide to read them.",
-      "tip": "The Registrar page lists the current term's PDFs when they are published.",
+      "description": "The Registrar posts the regular and common exam schedules for each semester on its page. Use the guide to read them.",
+      "tip": "The Registrar page lists the current semester's PDFs when they are published.",
       "links": [
         {
           "label": "Registrar's Services (final exams)",
@@ -1134,12 +1172,12 @@
     {
       "id": "f-honors",
       "term": "fall",
-      "week": 10,
+      "week": 12,
       "category": "students",
-      "title": "Honors Convocation and Dean's List celebrations",
+      "title": "Honors Convocation",
       "dateText": "",
-      "description": "Ceremonies that recognize high-achieving students. Faculty are usually invited to attend.",
-      "tip": "Watch your email for the SBA date.",
+      "description": "The University recognizes students who earned a GPA of at least 3.5 in the previous Fall and Spring semesters (the Chancellor's List). Faculty are invited by the Provost's office.",
+      "tip": "Faculty wear academic regalia with the hood (no cap). Confirm your attendance by the date in the invitation.",
       "links": [
         {
           "label": "Celebrating our Graduates",
@@ -1147,18 +1185,6 @@
         }
       ],
       "audience": "all"
-    },
-    {
-      "id": "s-honors",
-      "term": "spring",
-      "week": 10,
-      "category": "students",
-      "title": "Honors and Dean's List celebrations",
-      "dateText": "",
-      "description": "Recognition events for high-achieving students.",
-      "tip": "Watch your email for the SBA date.",
-      "audience": "all",
-      "links": []
     },
     {
       "id": "f-club",
@@ -1197,12 +1223,12 @@
     {
       "id": "s-global",
       "term": "spring",
-      "week": 10,
+      "week": 4,
       "category": "students",
       "title": "Global Day",
       "dateText": "",
-      "description": "The largest event at AUS, showcasing the cultures of the student body. Organized by the Student Clubs and Organizations Office.",
-      "tip": "Confirm the date with Student Affairs.",
+      "description": "The largest event at AUS, showcasing the cultures of the student body. It is organized by the Office of Student Experience and held over an evening or two in early February.",
+      "tip": "Watch your email for the date and campus entry information.",
       "links": [
         {
           "label": "Student Life",
@@ -1217,7 +1243,7 @@
       "week": "after",
       "category": "teaching",
       "title": "Spring course files and CLO reporting",
-      "description": "Upload course files and complete CLO/CAR for the courses you taught this term. The deadline is announced by email each term.",
+      "description": "Upload course files and complete CLO/CAR for the courses you taught this semester. The deadline is announced by email each semester.",
       "tip": "Course file guidelines arrive in the end-of-semester email from the Associate Dean.",
       "links": [
         {
@@ -1238,7 +1264,7 @@
       "week": "after",
       "category": "teaching",
       "title": "Summer course files and CLO reporting",
-      "description": "Upload course files and complete CLO/CAR for the courses you taught this term. The deadline is announced by email each term.",
+      "description": "Upload course files and complete CLO/CAR for the courses you taught this semester. The deadline is announced by email each semester.",
       "links": [
         {
           "label": "Watermark - CLO Reporting",
@@ -1280,7 +1306,7 @@
       "week": 1,
       "category": "teaching",
       "title": "iLearn demo",
-      "description": "Contact Razan Adi for an iLearn demo.",
+      "description": "Contact Ms. Razan Adi for an iLearn demo.",
       "tip": "A good time to set up your course shells.",
       "links": [
         {
@@ -1304,7 +1330,7 @@
       "description": "Watch for an email from Ms. Abegail Morata about TA assignments for the semester.",
       "links": [
         {
-          "label": "Email abegail@aus.edu",
+          "label": "Email Ms. Abegail Morata",
           "url": "mailto:abegail@aus.edu"
         }
       ],
@@ -1318,13 +1344,13 @@
       "week": 2,
       "category": "research",
       "title": "Graduate research assistants (GRAs)",
-      "description": "Watch for an email from Indu Madhusudhanan about GRA requests for the semester.",
+      "description": "Watch for an email from Ms. Indu Madhusudhanan about GRA requests for the semester.",
       "tip": "Ask your Head of Department if you are unsure whether you qualify.",
       "audience": "all",
       "dateText": "",
       "links": [
         {
-          "label": "Contact Indu for information",
+          "label": "Contact Ms. Indu Madhusudhanan for information",
           "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
@@ -1335,7 +1361,7 @@
       "week": 4,
       "category": "teaching",
       "title": "Schedule offering for next semester",
-      "description": "Watch for an email from the Head of Department about next semester's course offerings and your teaching preferences.",
+      "description": "Watch for an email from the Head of Department (Dr. Virginia Bodolica) about next semester's course offerings and your teaching preferences.",
       "audience": "all",
       "dateText": "",
       "tip": "",
@@ -1350,7 +1376,7 @@
       "description": "Watch for an email from Ms. Abegail Morata with the deadline for textbook orders.",
       "links": [
         {
-          "label": "Email abegail@aus.edu",
+          "label": "Email Ms. Abegail Morata",
           "url": "mailto:abegail@aus.edu"
         }
       ],
@@ -1364,7 +1390,7 @@
       "week": 1,
       "category": "teaching",
       "title": "iLearn demo",
-      "description": "Contact Razan Adi for an iLearn demo.",
+      "description": "Contact Ms. Razan Adi for an iLearn demo.",
       "tip": "A good time to set up your course shells.",
       "links": [
         {
@@ -1388,7 +1414,7 @@
       "description": "Watch for an email from Ms. Abegail Morata about TA assignments for the semester.",
       "links": [
         {
-          "label": "Email abegail@aus.edu",
+          "label": "Email Ms. Abegail Morata",
           "url": "mailto:abegail@aus.edu"
         }
       ],
@@ -1402,13 +1428,13 @@
       "week": 2,
       "category": "research",
       "title": "Graduate research assistants (GRAs)",
-      "description": "Watch for an email from Indu Madhusudhanan about GRA requests for the semester.",
+      "description": "Watch for an email from Ms. Indu Madhusudhanan about GRA requests for the semester.",
       "tip": "Ask your Head of Department if you are unsure whether you qualify.",
       "audience": "all",
       "dateText": "",
       "links": [
         {
-          "label": "Contact Indu for information",
+          "label": "Contact Ms. Indu Madhusudhanan for information",
           "url": "mailto:imadhusudhanan@aus.edu"
         }
       ]
@@ -1419,7 +1445,7 @@
       "week": 4,
       "category": "teaching",
       "title": "Schedule offering for next semester",
-      "description": "Watch for an email from the Head of Department about next semester's course offerings and your teaching preferences.",
+      "description": "Watch for an email from the Head of Department (Dr. Virginia Bodolica) about next semester's course offerings and your teaching preferences.",
       "audience": "all",
       "dateText": "",
       "tip": "",
@@ -1434,7 +1460,7 @@
       "description": "Watch for an email from Ms. Abegail Morata with the deadline for textbook orders.",
       "links": [
         {
-          "label": "Email abegail@aus.edu",
+          "label": "Email Ms. Abegail Morata",
           "url": "mailto:abegail@aus.edu"
         }
       ],
@@ -1498,7 +1524,7 @@
       "term": "year",
       "category": "teaching",
       "title": "Idea for a new course",
-      "description": "Contact the chair of the Department Curriculum Committee (DCC), Alaa Hamade.",
+      "description": "Contact the chair of the Department Curriculum Committee (DCC), Mr. Alaa Hamade.",
       "links": [
         {
           "label": "Email ahamade@aus.edu",
@@ -1506,7 +1532,7 @@
         }
       ],
       "audience": "all",
-      "dateText": "",
+      "dateText": "Reach out to discuss opportunities to develop a new course",
       "tip": ""
     },
     {
@@ -1586,7 +1612,7 @@
       "week": 12,
       "category": "students",
       "title": "Early registration",
-      "description": "Registration for the next term opens. Remind advisees to clear their advising holds and register on time.",
+      "description": "Registration for the next semester opens. Remind advisees to clear their advising holds and register on time.",
       "links": [
         {
           "label": "Academic calendar",
@@ -1607,7 +1633,7 @@
       "week": 12,
       "category": "students",
       "title": "Early registration",
-      "description": "Registration for the next term opens. Remind advisees to clear their advising holds and register on time.",
+      "description": "Registration for the next semester opens. Remind advisees to clear their advising holds and register on time.",
       "links": [
         {
           "label": "Academic calendar",
@@ -1623,18 +1649,229 @@
       "tip": ""
     },
     {
-      "id": "y-facilities",
-      "term": "year",
+      "id": "f-deanslist",
+      "term": "fall",
+      "week": 10,
+      "category": "students",
+      "audience": "all",
+      "title": "Dean's List Ceremony",
+      "dateText": "",
+      "description": "The School of Business Administration celebrates students on the Dean's List. Faculty are invited, and your presence means a great deal to the students. The invitation comes by email from Ms. Amal Alkadri.",
+      "tip": "Watch your email for the date and time.",
+      "links": []
+    },
+    {
+      "id": "f-aib",
+      "term": "fall",
+      "week": "after",
       "category": "dept",
       "audience": "all",
-      "title": "Facilities and housing requests",
-      "dateText": "Call 06 515 2100",
-      "description": "For facilities and housing requests, call 06 515 2100.",
+      "title": "AIB MENA 2026 conference",
+      "dateText": "December 10 to 12",
+      "description": "You are invited to attend the AIB MENA 2026 conference, an event organized by MSE faculty. Come along to support colleagues and meet researchers from the region.",
       "tip": "",
       "links": [
         {
-          "label": "Call 06 515 2100",
-          "url": "tel:+97165152100"
+          "label": "Conference website",
+          "url": "https://info.aus.edu/aib-mena-2026-conference"
+        }
+      ]
+    },
+    {
+      "id": "f-fpcvote",
+      "term": "fall",
+      "week": 6,
+      "category": "dept",
+      "audience": "all",
+      "title": "Vote for the department's FPC representative",
+      "dateText": "",
+      "description": "As per the Faculty Handbook, the department faculty select one colleague to serve as a temporary member of the Faculty Personnel Committee (FPC) for the year. The Head of Department, Dr. Virginia Bodolica, emails the list of eligible colleagues, and you reply with your vote to Ms. Abegail Morata, usually by the end of that day.",
+      "tip": "Faculty in their terminal contract year, whose contracts have not been extended, cannot vote. Watch your email.",
+      "links": [
+        {
+          "label": "Faculty Handbook",
+          "url": "https://aus.edu/sites/default/files/2024_-_faculty_handbook_-_july_8_2024.pdf"
+        },
+        {
+          "label": "Email Ms. Abegail Morata",
+          "url": "mailto:abegail@aus.edu"
+        }
+      ]
+    },
+    {
+      "id": "f-rrg1",
+      "term": "fall",
+      "week": 2,
+      "category": "research",
+      "audience": "all",
+      "title": "Rolling Research Grant (RRG) deadline",
+      "dateText": "",
+      "description": "Email your proposal package to Internal Programs for a compliance check, then submit it to your Head of Department. The Dean signs the final submission and awards follow within about a month. Up to AED 75,000 per grant.",
+      "tip": "Check the Research Office for this year's exact dates.",
+      "links": [
+        {
+          "label": "Email Internal Programs",
+          "url": "mailto:internalprograms@aus.edu"
+        },
+        {
+          "label": "Contact Ms. Indu Madhusudhanan for information",
+          "url": "mailto:imadhusudhanan@aus.edu"
+        }
+      ]
+    },
+    {
+      "id": "f-rrg2",
+      "term": "fall",
+      "week": 10,
+      "category": "research",
+      "audience": "all",
+      "title": "Rolling Research Grant (RRG) deadline",
+      "dateText": "",
+      "description": "Email your proposal package to Internal Programs for a compliance check, then submit it to your Head of Department. The Dean signs the final submission and awards follow within about a month. Up to AED 75,000 per grant.",
+      "tip": "Check the Research Office for this year's exact dates.",
+      "links": [
+        {
+          "label": "Email Internal Programs",
+          "url": "mailto:internalprograms@aus.edu"
+        },
+        {
+          "label": "Contact Ms. Indu Madhusudhanan for information",
+          "url": "mailto:imadhusudhanan@aus.edu"
+        }
+      ]
+    },
+    {
+      "id": "f-rrg3",
+      "term": "fall",
+      "week": "after",
+      "category": "research",
+      "audience": "all",
+      "title": "Rolling Research Grant (RRG) deadline",
+      "dateText": "",
+      "description": "Email your proposal package to Internal Programs for a compliance check, then submit it to your Head of Department. The Dean signs the final submission and awards follow within about a month. Up to AED 75,000 per grant.",
+      "tip": "Check the Research Office for this year's exact dates.",
+      "links": [
+        {
+          "label": "Email Internal Programs",
+          "url": "mailto:internalprograms@aus.edu"
+        },
+        {
+          "label": "Contact Ms. Indu Madhusudhanan for information",
+          "url": "mailto:imadhusudhanan@aus.edu"
+        }
+      ]
+    },
+    {
+      "id": "s-rrg4",
+      "term": "spring",
+      "week": 8,
+      "category": "research",
+      "audience": "all",
+      "title": "Rolling Research Grant (RRG) deadline",
+      "dateText": "",
+      "description": "Email your proposal package to Internal Programs for a compliance check, then submit it to your Head of Department. The Dean signs the final submission and awards follow within about a month. Up to AED 75,000 per grant.",
+      "tip": "Check the Research Office for this year's exact dates.",
+      "links": [
+        {
+          "label": "Email Internal Programs",
+          "url": "mailto:internalprograms@aus.edu"
+        },
+        {
+          "label": "Contact Ms. Indu Madhusudhanan for information",
+          "url": "mailto:imadhusudhanan@aus.edu"
+        }
+      ]
+    },
+    {
+      "id": "s-rrg5",
+      "term": "spring",
+      "week": 14,
+      "category": "research",
+      "audience": "all",
+      "title": "Rolling Research Grant (RRG) deadline",
+      "dateText": "",
+      "description": "Email your proposal package to Internal Programs for a compliance check, then submit it to your Head of Department. The Dean signs the final submission and awards follow within about a month. Up to AED 75,000 per grant.",
+      "tip": "Check the Research Office for this year's exact dates.",
+      "links": [
+        {
+          "label": "Email Internal Programs",
+          "url": "mailto:internalprograms@aus.edu"
+        },
+        {
+          "label": "Contact Ms. Indu Madhusudhanan for information",
+          "url": "mailto:imadhusudhanan@aus.edu"
+        }
+      ]
+    },
+    {
+      "id": "y-rrg",
+      "term": "year",
+      "category": "research",
+      "audience": "all",
+      "title": "Rolling Research Grant (RRG)",
+      "dateText": "Five deadlines a year, every two months",
+      "description": "The RRG funds research on a rolling basis, so you do not wait for one annual deadline. Proposal packages are due for validation on the first of September, November, January, March and May. Grants are up to AED 75,000 and often support fieldwork. Details are on iLearn under Research Services.",
+      "tip": "Plan backwards: your Head of Department and the Dean need time to sign before the final submission.",
+      "links": [
+        {
+          "label": "Email Internal Programs",
+          "url": "mailto:internalprograms@aus.edu"
+        },
+        {
+          "label": "Contact Ms. Indu Madhusudhanan for information",
+          "url": "mailto:imadhusudhanan@aus.edu"
+        }
+      ]
+    },
+    {
+      "id": "y-conftravel",
+      "term": "year",
+      "category": "research",
+      "audience": "all",
+      "title": "Applying to attend a conference",
+      "dateText": "Contact Ms. Abegail Morata for the forms",
+      "description": "Before you travel to a conference, contact Ms. Abegail Morata, Administrative Assistant in the department, for the forms you need, such as the faculty absence form and the business travel form. Requirements change, so ask early.",
+      "tip": "",
+      "links": [
+        {
+          "label": "Email Ms. Abegail Morata",
+          "url": "mailto:abegail@aus.edu"
+        }
+      ]
+    },
+    {
+      "id": "y-tripclaim",
+      "term": "year",
+      "category": "research",
+      "audience": "all",
+      "title": "After the trip: claim your expenses",
+      "dateText": "Submit in Oracle Fusion",
+      "description": "When you return, submit an expense report in Oracle Fusion to claim your reimbursement. Contact Ms. Abegail Morata, Administrative Assistant in the department, for the forms and steps to follow.",
+      "tip": "",
+      "links": [
+        {
+          "label": "Oracle Fusion",
+          "url": "https://fusion.aus.edu"
+        },
+        {
+          "label": "Email Ms. Abegail Morata",
+          "url": "mailto:abegail@aus.edu"
+        }
+      ]
+    },
+    {
+      "id": "y-fieldtrip",
+      "term": "year",
+      "category": "teaching",
+      "audience": "all",
+      "title": "Taking students on a field trip",
+      "dateText": "Contact Ms. Abegail Morata for the forms",
+      "description": "Before you take students on a field trip, contact Ms. Abegail Morata, Administrative Assistant in the department, for the forms and approvals you need.",
+      "tip": "",
+      "links": [
+        {
+          "label": "Email Ms. Abegail Morata",
+          "url": "mailto:abegail@aus.edu"
         }
       ]
     }

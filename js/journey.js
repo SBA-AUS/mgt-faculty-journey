@@ -28,13 +28,14 @@
     document.getElementById("ay").textContent = d.meta.academicYear;
     document.getElementById("ay-util").textContent = d.meta.academicYear;
     var u = d.meta.updated ? Core.parse(d.meta.updated) : null;
-    document.getElementById("updated").textContent = u ? ("0" + u.getDate()).slice(-2) + "-" + Core.MONTHS[u.getMonth()] + "-" + u.getFullYear() : "";
+    document.getElementById("updated").textContent = u ? u.getDate() + " " + Core.MONTHS[u.getMonth()] + " " + u.getFullYear() : "";
 
     renderTabs();
     renderLegend();
     renderStats();
     renderTerm();
     renderAllYear();
+    renderCampus();
     openFromHash();
   }
 
@@ -73,7 +74,7 @@
       var b = h("button", {
         class: "tab", role: "tab", id: "tab-" + k, "aria-selected": k === activeTerm ? "true" : "false",
         "aria-controls": "panel", onclick: function () { activeTerm = k; renderTabs(); renderTerm(); }
-      }, t.label, isNow ? h("span", { class: "dot", title: "Current term", "aria-label": "current term" }) : null);
+      }, t.label, isNow ? h("span", { class: "dot", title: "Current semester", "aria-label": "current semester" }) : null);
       box.appendChild(b);
     });
   }
@@ -133,7 +134,7 @@
         var t2 = data.terms[k];
         if (t2 && !up && Core.parse(t2.start) > now) up = t2;
       });
-      s1.appendChild(h("p", { class: "big", text: up ? "Between terms" : "Term ended" }));
+      s1.appendChild(h("p", { class: "big", text: up ? "Between semesters" : "Semester ended" }));
       s1.appendChild(h("p", { class: "small", text: up ? up.label + " classes start " + Core.short(Core.parse(up.start)) : "See the next academic year's dates when published." }));
     }
     box.appendChild(s1);
@@ -168,7 +169,7 @@
       });
       s3.appendChild(ul2);
     } else {
-      s3.appendChild(h("p", { class: "small", text: "Nothing more in this term." }));
+      s3.appendChild(h("p", { class: "small", text: "Nothing more in this semester." }));
     }
     box.appendChild(s3);
   }
@@ -263,6 +264,23 @@
     });
   }
 
+  function renderCampus() {
+    var box = document.getElementById("campus");
+    if (!box) return;
+    box.innerHTML = "";
+    var items = data.links.filter(function (l) { return l.group === "campus"; });
+    if (!items.length) { box.hidden = true; return; }
+    box.hidden = false;
+    var ul = h("ul", { class: "campus-list" });
+    items.forEach(function (l) {
+      ul.appendChild(h("li", null,
+        h("a", { href: Core.safeUrl(l.url), target: "_blank", rel: "noopener" }, l.label),
+        l.desc ? h("span", { class: "help-desc", text: l.desc }) : null));
+    });
+    box.appendChild(h("h3", { text: "Campus Life" }));
+    box.appendChild(ul);
+  }
+
   /* ---------- dialogs ---------- */
   var dlg = document.getElementById("ev-dialog");
   var cdlg = document.getElementById("coord-dialog");
@@ -304,7 +322,7 @@
     pc.appendChild(h("button", { class: "x", type: "button", "aria-label": "Close", onclick: function () { cdlg.close(); } }, "×"));
     pc.appendChild(h("p", { class: "cat", text: cats.teaching ? cats.teaching.label : "Teaching" }));
     pc.appendChild(h("h3", { id: "coord-title", text: "Course coordinators" }));
-    pc.appendChild(h("p", { text: "Send your syllabus to the coordinator of your course for approval, then to the Head of Department." }));
+    pc.appendChild(h("p", { text: "Send your syllabus to the coordinator of your course for approval, then to the Head of Department, Dr. Virginia Bodolica." }));
     var list = data.coordinators || [];
     if (!list.length) {
       pc.appendChild(h("div", { class: "empty-note", text: "The list of coordinators is coming soon." }));

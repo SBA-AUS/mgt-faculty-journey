@@ -1,6 +1,6 @@
 /* Shared helpers: dates, week rows, tiny DOM builder. */
 (function () {
-  var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   var DAY = 86400000;
 
   function parse(s) {
@@ -47,7 +47,7 @@
       });
     }
     out.push({ key: "finals", title: "Finals", sub: fs && fe ? range(fs, fe) : "", start: fs, end: fe });
-    out.push({ key: "after", title: "After the term", sub: "Wrap-up", start: addDays(fe, 1), end: addDays(fe, 28) });
+    out.push({ key: "after", title: "After the semester", sub: "Wrap-up", start: addDays(fe, 1), end: addDays(fe, 28) });
     return out;
   }
 

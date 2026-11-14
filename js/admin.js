@@ -109,7 +109,7 @@
   function weekText(e) {
     if (e.term === "year") return "All year";
     if (e.week === "finals") return "Finals";
-    if (e.week === "after") return "After term";
+    if (e.week === "after") return "After semester";
     return "Week " + e.week + (e.weekEnd ? " to " + e.weekEnd : "");
   }
   function sortKey(e) {
@@ -128,7 +128,7 @@
     list.forEach(function (e) {
       var c = model.categories[e.category] || { label: e.category, color: "#999" };
       var tr = h("tr", null,
-        h("td", { "data-label": "Term", text: e.term }),
+        h("td", { "data-label": "Semester", text: e.term }),
         h("td", { "data-label": "Week", text: weekText(e) }),
         h("td", { "data-label": "Event" }, h("span", { class: "tag", style: "background:" + c.color, text: c.label }), " ", e.title),
         h("td", { "data-label": "Note", text: e.dateText || "" }),
@@ -144,7 +144,7 @@
 
   function duplicate(e) {
     var c = clone(e); c.id = "ev" + Date.now(); c.title = e.title + " (copy)";
-    model.events.push(c); renderEvents(); touch(); toast("Duplicated. Edit the copy to change its term or week.");
+    model.events.push(c); renderEvents(); touch(); toast("Duplicated. Edit the copy to change its semester or week.");
   }
   function remove(e) {
     if (!confirm('Delete "' + e.title + '"?')) return;
@@ -202,7 +202,7 @@
     form.appendChild(h("h3", { text: isNew ? "Add event" : "Edit event" }));
     form.appendChild(h("div", { class: "grid" },
       h("div", { class: "full" }, h("label", { for: "e-title", text: "Title" }), title),
-      field("Term", term, "e-term"), field("Week", week, "e-week"), field("Spans until week (optional)", weekEnd, "e-wend"),
+      field("Semester", term, "e-term"), field("Week", week, "e-week"), field("Spans until week (optional)", weekEnd, "e-wend"),
       field("Category", cat, "e-cat"), field("Audience", aud, "e-aud"),
       h("div", { class: "full" }, h("label", { for: "e-date", text: "Short note under the title (optional, for example Weekly or Due June 1)" }), dateText),
       h("div", { class: "full" }, h("label", { for: "e-desc", text: "Description" }), desc),
@@ -241,6 +241,7 @@
   function renderLinks() {
     var box = $("links"); box.innerHTML = "";
     var groups = Object.keys(model.categories).map(function (k) { return { id: k, label: model.categories[k].label }; });
+    groups.push({ id: "campus", label: "Campus Life (bottom line)" });
     model.links.forEach(function (l, i) {
       var sel = h("select", { "aria-label": "Group", onchange: function (e) { l.group = e.target.value; touch(); } },
         groups.map(function (g) { return h("option", { value: g.id, text: g.label, selected: l.group === g.id }); }));
